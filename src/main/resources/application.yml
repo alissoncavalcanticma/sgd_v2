@@ -41,3 +41,5 @@ api:
   domain:
     users:
         path: "/users"
+        endpoints:
+          findByEmail: "/findByEmail"

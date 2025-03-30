@@ -5,10 +5,7 @@ import br.com.alstwo.sgd.resources.UserResource;
 import br.com.alstwo.sgd.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,5 +31,12 @@ public class UserResourceImpl implements UserResource {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok().body(users);
+    }
+
+    @Override
+    @GetMapping("/findByEmail")
+    public ResponseEntity<User> findByEmail(@RequestParam String email) {
+        User user = userService.findByEmail(email);
+        return ResponseEntity.ok().body(user);
     }
 }

@@ -8,5 +8,9 @@ import java.util.List;
 public interface UserResource {
 
     ResponseEntity<User> findById(Long id);
+
     ResponseEntity<List<User>> findAll();
+
+    ResponseEntity<User> findByEmail(String email);
+
 }
