@@ -34,3 +34,10 @@ server:
 #    org.springframework.jdbc.datasource: DEBUG
 #    org.hibernate: DEBUG
 #    org.hibernate.orm.connections.pooling: DEBUG
+
+
+api:
+  basePath: "/api"
+  domain:
+    users:
+        path: "/users"
