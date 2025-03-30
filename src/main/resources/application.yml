@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: sgd
+  datasource:
+    url: jdbc:mysql://localhost:3306/bd_sgd?useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: user
+    password: 123
+    hikari:
+      connectionTimeout: 30000
+      maximumPoolSize: 1
+      minimum-idle: 1
+      leakDetectionThreshold: 60000
+      keepaliveTime: 30000
+      pool-name: HikariCP
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect  # Dialeto do MySQL
+    hibernate:
+      ddl-auto: update  # Pode ser 'none', 'update', 'create', 'create-drop' conforme sua necessidade
+      dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        format_sql: true
+server:
+  port: ${PORT:8081}
+  tomcat:
+    connection-timeout: 5000
+    max-threads: 1
+    min-spare-threads: 1
+#logging:
+#  level:
+#    org.springframework.jdbc.datasource: DEBUG
+#    org.hibernate: DEBUG
+#    org.hibernate.orm.connections.pooling: DEBUG
+
+
+api:
+  basePath: "/api"
+  domain:
+    users:
+        path: "/users"
