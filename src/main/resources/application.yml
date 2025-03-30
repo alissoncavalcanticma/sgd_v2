@@ -16,7 +16,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect  # Dialeto do MySQL
     hibernate:
-      ddl-auto: create  # Pode ser 'none', 'update', 'create', 'create-drop' conforme sua necessidade
+      ddl-auto: update  # Pode ser 'none', 'update', 'create', 'create-drop' conforme sua necessidade
       dialect: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
     defer-datasource-initialization: true
