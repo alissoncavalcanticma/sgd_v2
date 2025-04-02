@@ -33,4 +33,19 @@ public class UserServiceImpl implements UserService {
         Optional<User> userOptional = userRepository.findByEmail(email);
         return userOptional.orElse(null);
     }
+
+    @Override
+    public User create(User user) {
+        return null;
+    }
+
+    @Override
+    public User update(User user) {
+        return null;
+    }
+
+    @Override
+    public void delete(Long id) {
+
+    }
 }
