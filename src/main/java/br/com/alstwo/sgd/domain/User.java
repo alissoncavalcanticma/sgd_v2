@@ -3,11 +3,13 @@ package br.com.alstwo.sgd.domain;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.Instant;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -23,4 +25,12 @@ public class User {
     private String email;
     private String name;
     private String nickname;
+
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    private Instant createdAt;
+
+    @UpdateTimestamp
+    private Instant updatedAt;
 }
