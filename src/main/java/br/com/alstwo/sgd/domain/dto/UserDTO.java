@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -15,6 +16,7 @@ import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 public class UserDTO {
@@ -37,9 +39,11 @@ public class UserDTO {
     private String nickname;
 
     @CreationTimestamp
-    @Column(updatable = false)
+    @Column(nullable = false, updatable = false)
     private Instant createdAt;
 
     @UpdateTimestamp
+    @Column(nullable = false)
     private Instant updatedAt;
+
 }

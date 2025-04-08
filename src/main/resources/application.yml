@@ -1,4 +1,8 @@
 spring:
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+#      date-format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
   application:
     name: sgd
   datasource:
@@ -27,8 +31,11 @@ server:
   port: ${PORT:8081}
   tomcat:
     connection-timeout: 5000
-    max-threads: 1
-    min-spare-threads: 1
+    threads:
+      max: 1
+      min-spare: 1
+    accept-count: 1
+
 #logging:
 #  level:
 #    org.springframework.jdbc.datasource: DEBUG
