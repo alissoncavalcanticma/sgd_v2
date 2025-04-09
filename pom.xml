@@ -71,7 +71,6 @@
 		</dependency>
 
 		<!-- Springdoc Open API -->
-
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
@@ -83,6 +82,9 @@
 			<artifactId>springdoc-openapi-ui</artifactId>
 			<version>1.8.0</version>
 		</dependency>
+
+
+
 	</dependencies>
 
 	<build>
