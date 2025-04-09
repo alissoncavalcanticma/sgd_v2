@@ -12,8 +12,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
-import java.time.OffsetDateTime;
-import java.time.ZoneOffset;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,7 +24,7 @@ public class UserDTO {
     private Long id;
 
     @Column(unique = true)
-    private String user;
+    private String login;
 
     /*
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY);
