@@ -1,11 +1,9 @@
 spring:
   application:
     name: sgd
-  profiles:
-    active: local
   datasource:
-    url: jdbc:mysql://localhost:3306/bd_sgd?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=America/Sao_Paulo
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
     username: user
     password: 123
     hikari:
@@ -15,19 +13,22 @@ spring:
       leakDetectionThreshold: 60000
       keepaliveTime: 30000
       pool-name: HikariCP
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
   jpa:
     hibernate:
-      ddl-auto: update  # Pode ser 'none', 'update', 'create', 'create-drop' conforme sua necessidade
+      ddl-auto: create  # Pode ser 'none', 'update', 'create', 'create-drop' conforme sua necessidade
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect: org.hibernate.dialect.H2Dialect
         format_sql: true
     show-sql: true
     defer-datasource-initialization: true
   jackson:
     serialization:
       WRITE_DATES_AS_TIMESTAMPS: false
-#      date-format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
 server:
   port: ${PORT:8081}
   tomcat:
@@ -48,6 +49,6 @@ api:
   basePath: "/api"
   domain:
     users:
-        path: "/users"
-        endpoints:
-          findByEmail: "/findByEmail"
+      path: "/users"
+      endpoints:
+        findByEmail: "/findByEmail"

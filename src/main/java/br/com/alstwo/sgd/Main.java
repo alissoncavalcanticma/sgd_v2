@@ -21,6 +21,5 @@ public class Main implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		userService.create(new User(null, "alisson", "123", "alisson@alisson", "AlissonCG", "Alisson", null, null));
-
 	}
 }
