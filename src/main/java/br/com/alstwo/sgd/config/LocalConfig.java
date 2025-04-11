@@ -17,6 +17,7 @@ public class LocalConfig {
     @Autowired
     private UserRepository userRepository;
 
+    /*
     @Bean
     public CommandLineRunner createRecords(UserRepository userRepository) {
         return args -> {
@@ -26,6 +27,7 @@ public class LocalConfig {
             userRepository.saveAll(List.of(newUser1, newUser2));
 
         };
-    }
 
+    }
+     */
 }

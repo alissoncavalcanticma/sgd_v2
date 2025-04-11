@@ -15,27 +15,37 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
-@Table(name = "tb_user")
+@Table(name = "usuarios")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    @Column(name = "id")
+    private Long id;
 
-
+    @Column(name = "usuario")
     private String login;
+
+    @Column(name = "senha")
     private String password;
+
+    @Column(name = "email")
     private String email;
-    private String name;
+
+    @Column(name = "apelido")
     private String nickname;
 
+    @Column(name = "nome_completo")
+    private String name;
+
+    @Column(name = "status")
+    private Integer status;
 
     @CreationTimestamp
-    @Column(nullable = false, updatable = false)
+    @Column(name = "created_at",nullable = false, updatable = false)
     private Instant createdAt;
 
     @UpdateTimestamp
-    @Column(nullable = false)
+    @Column(name = "updated_at", nullable = false)
     private Instant updatedAt;
-
 }

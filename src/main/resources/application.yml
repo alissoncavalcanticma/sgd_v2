@@ -1,8 +1,8 @@
 spring:
   application:
     name: sgd
-  profiles:
-    active: local
+  #profiles:
+   # active: local
   datasource:
     url: jdbc:mysql://localhost:3306/bd_sgd?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=America/Sao_Paulo
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -17,7 +17,7 @@ spring:
       pool-name: HikariCP
   jpa:
     hibernate:
-      ddl-auto: update  # Pode ser 'none', 'update', 'create', 'create-drop' conforme sua necessidade
+      ddl-auto: validate  # Pode ser 'none', 'update', 'create', 'create-drop' conforme sua necessidade
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
