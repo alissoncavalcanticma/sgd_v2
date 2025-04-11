@@ -28,11 +28,12 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 
-    @Override
+
+/*    @Override
     public User findByEmail(String email){
         Optional<User> userOptional = userRepository.findByEmail(email);
         return userOptional.orElse(null);
-    }
+    }*/
 
     @Override
     public User create(User user) {

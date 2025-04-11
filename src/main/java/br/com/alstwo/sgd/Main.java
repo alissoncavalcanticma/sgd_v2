@@ -20,6 +20,6 @@ public class Main implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		userService.create(new User(null, "alisson", "123", "alisson@alisson", "AlissonCG", "Alisson", null, null));
+		userService.create(new User(null, "teste", "123", "alisson@alisson", "AlissonCG", "Alisson", 1, null, null ));
 	}
 }

@@ -12,6 +12,6 @@ public interface UserResource {
 
     ResponseEntity<List<UserDTO>> findAll();
 
-    ResponseEntity<UserDTO> findByEmail(String email);
+/*    ResponseEntity<UserDTO> findByEmail(String email);*/
 
 }

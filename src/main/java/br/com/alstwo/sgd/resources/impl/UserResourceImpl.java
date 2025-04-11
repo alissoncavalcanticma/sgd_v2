@@ -49,12 +49,12 @@ public class UserResourceImpl implements UserResource {
         List<UserDTO> userDTO = users.stream().map(x -> mapper.map(x, UserDTO.class)).toList();
         return ResponseEntity.ok().body(userDTO);
     }
-
+/*
     @Override
     @GetMapping("/findByEmail")
     @Tag(name = "Users") //Annotation of Swagger
     public ResponseEntity<UserDTO> findByEmail(@RequestParam String email) {
         UserDTO user = mapper.map(userService.findByEmail(email), UserDTO.class);
         return ResponseEntity.ok().body(user);
-    }
+    }*/
 }
