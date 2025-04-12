@@ -43,9 +43,9 @@ public class User {
 
     @CreationTimestamp
     @Column(name = "created_at",nullable = false, updatable = false)
-    private Instant createdAt;
+    private Instant created_at;
 
     @UpdateTimestamp
     @Column(name = "updated_at", nullable = false)
-    private Instant updatedAt;
+    private Instant updated_at;
 }
