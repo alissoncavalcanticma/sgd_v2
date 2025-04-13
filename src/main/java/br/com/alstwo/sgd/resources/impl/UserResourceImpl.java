@@ -8,22 +8,24 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
+import java.util.Map;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping(value = "${api.basePath}${api.domain.users.path}")
 public class UserResourceImpl implements UserResource {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
-    @Autowired
-    private ModelMapper mapper;
+    private final ModelMapper mapper;
 
     @Override
     /* Anotações do Swagger */
@@ -64,4 +66,18 @@ public class UserResourceImpl implements UserResource {
         UserDTO user = mapper.map(userService.findByEmail(email), UserDTO.class);
         return ResponseEntity.ok().body(user);
     }*/
+
+    @Override
+    /* Anotações do Swagger */
+    @Operation(summary = "Cadastro de usuário", description = "Cadastro de novo usuário", tags = "Users") //Annotation of swagger
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Cadastro de usuário com sucesso."),
+            @ApiResponse(responseCode = "400", description = "Tentativa de cadastro de usuário com erro.")
+    })
+    /* Anotações do Swagger */
+    public ResponseEntity<UserDTO> create(@RequestBody UserDTO userDTO){
+        User user = userService.create(mapper.map(userDTO, User.class));
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(user.getId()).toUri();
+        return ResponseEntity.created(uri).body(mapper.map(user, UserDTO.class));
+    }
 }

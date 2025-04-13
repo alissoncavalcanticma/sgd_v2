@@ -19,6 +19,6 @@ public interface UserResource {
 /*    ResponseEntity<UserDTO> findByEmail(String email);*/
 
     @PostMapping
-    ResponseEntity<UserDTO> create(User user);
+    ResponseEntity<UserDTO> create(UserDTO userDTO);
 
 }
