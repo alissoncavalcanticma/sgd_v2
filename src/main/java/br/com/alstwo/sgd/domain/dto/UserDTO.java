@@ -33,15 +33,16 @@ public class UserDTO {
 
     @Column(unique = true)
     private String email;
-    private String name;
     private String nickname;
+    private String name;
+    private Integer status;
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
-    private Instant createdAt;
+    private Instant created_at;
 
     @UpdateTimestamp
     @Column(nullable = false)
-    private Instant updatedAt;
+    private Instant updated_at;
 
 }
