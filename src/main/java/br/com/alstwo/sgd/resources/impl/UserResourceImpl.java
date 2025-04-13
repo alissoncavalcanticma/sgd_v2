@@ -26,12 +26,13 @@ public class UserResourceImpl implements UserResource {
     private ModelMapper mapper;
 
     @Override
-    @GetMapping(value = "/{id}")
+    /* Anotações do Swagger */
     @Operation(summary = "Consulta pelo identificador do usuário", description = "Consulta o usuário pelo ID", tags = "Users") //Annotation of swagger
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Retorna o usuário."),
             @ApiResponse(responseCode = "400", description = "usuário não encontrado.")
-    }) //Annotations of Swagger
+    })
+    /* Anotações do Swagger */
     //@Tag(name = "Users") //Annotation of Swagger
     public ResponseEntity<UserDTO> findById(@PathVariable Long id){
         User user = userService.findById(id);
@@ -39,8 +40,14 @@ public class UserResourceImpl implements UserResource {
     }
 
     @Override
-    @GetMapping
-    @Tag(name = "Users") //Annotation of Swagger
+    /* Anotações do Swagger */
+    @Operation(summary = "Consulta de usuários", description = "Consulta de lista de usuários", tags = "Users") //Annotation of swagger
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Retorna lista de usuários."),
+            @ApiResponse(responseCode = "400", description = "Erro na consulta.")
+    })
+    /* Anotações do Swagger */
+    //@Tag(name = "Users") //Annotation of Swagger
     public ResponseEntity<List<UserDTO>> findAll(){
         List<User> users = userService.findAll();
         if(users.isEmpty()){
