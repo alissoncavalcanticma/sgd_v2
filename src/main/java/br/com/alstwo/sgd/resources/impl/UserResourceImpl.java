@@ -80,4 +80,20 @@ public class UserResourceImpl implements UserResource {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(user.getId()).toUri();
         return ResponseEntity.created(uri).body(mapper.map(user, UserDTO.class));
     }
+
+
+
+    @Override
+    /* Anotações do Swagger */
+    @Operation(summary = "Alteração de cadastro de usuário", description = "Alteração de cadastro de usuário", tags = "Users")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Alteração realizada com sucesso."),
+            @ApiResponse(responseCode = "400", description = "Tentativa de alteração não realizada.")
+    })
+    /* Anotações do Swagger */
+    public ResponseEntity<UserDTO> update(@PathVariable Long id, @RequestBody UserDTO userDTO){
+        userDTO.setId(id);
+        User user = userService.update(mapper.map(userDTO, User.class));
+        return ResponseEntity.ok().body(mapper.map(user, UserDTO.class));
+    }
 }
