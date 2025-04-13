@@ -28,13 +28,6 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 
-
-/*    @Override
-    public User findByEmail(String email){
-        Optional<User> userOptional = userRepository.findByEmail(email);
-        return userOptional.orElse(null);
-    }*/
-
     @Override
     public User create(User user) {
         return userRepository.save(user);
@@ -42,11 +35,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User update(User user) {
-        return null;
+        return userRepository.save(user);
     }
 
     @Override
     public void delete(Long id) {
         //userRepository.delete(id);
     }
+
+    /*== Aux method ==*/
+    @Override
+    public User findByEmail(String email){
+        Optional<User> userOptional = userRepository.findByEmail(email);
+        return userOptional.orElse(null);
+    }
+
 }
