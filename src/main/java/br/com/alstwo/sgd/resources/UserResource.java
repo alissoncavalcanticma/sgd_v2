@@ -5,6 +5,7 @@ import br.com.alstwo.sgd.domain.dto.UserDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
 
@@ -20,5 +21,8 @@ public interface UserResource {
 
     @PostMapping
     ResponseEntity<UserDTO> create(UserDTO userDTO);
+
+    @PutMapping(value = "/{id}")
+    ResponseEntity<UserDTO> update(Long id, UserDTO userDTO);
 
 }
