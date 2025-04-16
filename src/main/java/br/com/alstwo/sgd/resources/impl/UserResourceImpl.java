@@ -5,9 +5,10 @@ import br.com.alstwo.sgd.domain.dto.UserDTO;
 import br.com.alstwo.sgd.resources.UserResource;
 import br.com.alstwo.sgd.services.UserService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +16,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @RequiredArgsConstructor
 @RestController
@@ -95,5 +98,34 @@ public class UserResourceImpl implements UserResource {
         userDTO.setId(id);
         User user = userService.update(mapper.map(userDTO, User.class));
         return ResponseEntity.ok().body(mapper.map(user, UserDTO.class));
+    }
+
+
+    @Override
+    /* Anotações do Swagger  */
+    @Operation(summary = "Deleção de usuário", description = "Deleção de cadastro de usuário", tags = "Users")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Deleção realizada com sucesso.",
+                    content = @Content(
+                                    mediaType = "application/json",
+                                    schema = @Schema(
+                                                type = "object",
+                                                example = "{\"success\": true, \"deletedUserID\": 1}"
+                    )
+            )),
+            @ApiResponse(responseCode = "400", description = "Tentativa de deleção não realizada.",
+                    content = @Content(
+                                    mediaType = "application/json",
+                                    schema = @Schema(
+                                            type = "object",
+                                            example = "{\"success\": false, \"deletedUserID\": null}"
+                                    )
+
+            ))
+    })
+    /* Anotações do Swagger  */
+    public ResponseEntity<Object> delete(@PathVariable Long id){
+        userService.delete(id);
+        return ResponseEntity.ok().body(Map.of("success", true, "deletedUserID", id));
     }
 }
