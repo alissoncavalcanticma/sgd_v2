@@ -35,12 +35,15 @@ public class UserResourceImpl implements UserResource {
     @Operation(summary = "Consulta pelo identificador do usuário", description = "Consulta o usuário pelo ID", tags = "Users") //Annotation of swagger
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Retorna o usuário."),
-            @ApiResponse(responseCode = "400", description = "usuário não encontrado.")
+            @ApiResponse(responseCode = "204", description = "Usuário não encontrado. Retorno vazio.", content = @Content())
     })
     /* Anotações do Swagger */
     //@Tag(name = "Users") //Annotation of Swagger
     public ResponseEntity<UserDTO> findById(@PathVariable Long id){
         User user = userService.findById(id);
+        if(user == null) {
+            return ResponseEntity.noContent().build();
+        }
         return ResponseEntity.ok().body(mapper.map(user, UserDTO.class));
     }
 
@@ -88,7 +91,7 @@ public class UserResourceImpl implements UserResource {
 
     @Override
     /* Anotações do Swagger */
-    @Operation(summary = "Alteração de cadastro de usuário", description = "Alteração de cadastro de usuário", tags = "Users")
+    @Operation(summary = "Alteração de cadastro de usuário", description = "Alteração de cadastro de usuário", tags = "Users") //Annotation of swagger
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Alteração realizada com sucesso."),
             @ApiResponse(responseCode = "400", description = "Tentativa de alteração não realizada.")
@@ -103,7 +106,7 @@ public class UserResourceImpl implements UserResource {
 
     @Override
     /* Anotações do Swagger  */
-    @Operation(summary = "Deleção de usuário", description = "Deleção de cadastro de usuário", tags = "Users")
+    @Operation(summary = "Deleção de usuário", description = "Deleção de cadastro de usuário", tags = "Users")  //Annotation of swagger
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Deleção realizada com sucesso.",
                     content = @Content(
