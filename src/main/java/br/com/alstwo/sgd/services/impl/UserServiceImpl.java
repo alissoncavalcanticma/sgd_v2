@@ -4,14 +4,10 @@ import br.com.alstwo.sgd.domain.User;
 import br.com.alstwo.sgd.repository.UserRepository;
 import br.com.alstwo.sgd.services.UserService;
 import br.com.alstwo.sgd.services.exceptions.ObjectNotFoundException;
-import jakarta.persistence.EntityNotFoundException;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @RequiredArgsConstructor //Define construtor incluindo propriedades final (Dependecy Injection)
