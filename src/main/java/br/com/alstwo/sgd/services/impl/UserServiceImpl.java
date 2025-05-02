@@ -3,15 +3,12 @@ package br.com.alstwo.sgd.services.impl;
 import br.com.alstwo.sgd.domain.User;
 import br.com.alstwo.sgd.repository.UserRepository;
 import br.com.alstwo.sgd.services.UserService;
+import br.com.alstwo.sgd.services.exceptions.DataIntegrityViolationException;
 import br.com.alstwo.sgd.services.exceptions.ObjectNotFoundException;
-import jakarta.persistence.EntityNotFoundException;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @RequiredArgsConstructor //Define construtor incluindo propriedades final (Dependecy Injection)
@@ -34,12 +31,24 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User create(User user) {
-        return userRepository.save(user);
+
+        Optional<User> existingUser = userRepository.findByEmail(user.getEmail());
+
+        if(existingUser.isEmpty()){
+            return userRepository.save(user);
+        }else{
+            throw new DataIntegrityViolationException("Email já está em uso!");
+        }
     }
 
     @Override
     public User update(User user) {
-        return userRepository.save(user);
+        Optional<User> existingUser = userRepository.findByEmail(user.getEmail());
+        if(existingUser != null){
+            return userRepository.save(user);
+        }else{
+            throw new ObjectNotFoundException("Usuário não encontrado!");
+        }
     }
 
     @Override
