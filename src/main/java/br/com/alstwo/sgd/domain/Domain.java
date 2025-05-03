@@ -1,11 +1,8 @@
 package br.com.alstwo.sgd.domain;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
@@ -17,10 +14,17 @@ import lombok.Setter;
 public class Domain {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+    @Column(name = "codigo")
     private Integer code;
+    @Column(name = "descricao")
     private String description;
+    @Column(name = "grupo")
     private String group;
+    @Column(name = "ativo")
     private Boolean active;
+    @Column(name = "observacao")
     private String observation;
 }
