@@ -40,7 +40,8 @@ server:
 #logging:
 #  level:
 #    org.springframework.jdbc.datasource: DEBUG
-#    org.hibernate: DEBUG
+#    org.hibernate.SQL: DEBUG
+#    org.hibernate.type.descriptor.sql: TRACE
 #    org.hibernate.orm.connections.pooling: DEBUG
 
 
