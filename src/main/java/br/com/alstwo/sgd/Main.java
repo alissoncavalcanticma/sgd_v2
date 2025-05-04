@@ -2,16 +2,19 @@ package br.com.alstwo.sgd;
 
 import br.com.alstwo.sgd.domain.User;
 import br.com.alstwo.sgd.services.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.Random;
+
+@RequiredArgsConstructor
 @SpringBootApplication
 public class Main implements CommandLineRunner {
 
-	@Autowired
-	private UserService userService;
+	private final UserService userService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Main.class, args);
@@ -19,7 +22,7 @@ public class Main implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
-	  userService.create(new User(null, "teste", "123", "alisson@alisson", "AlissonCG", "Alisson", 1, null, null ));
+		Double randomNumber = Math.random();
+	  	userService.create(new User(null, "teste", "123", "alisson@email" + (int)((randomNumber * 10)* 99.99) + ".com", "AlissonCG", "Alisson", 1, null, null ));
 	}
 }
