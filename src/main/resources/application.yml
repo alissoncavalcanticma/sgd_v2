@@ -49,6 +49,10 @@ api:
   basePath: "/api"
   domain:
     users:
-        path: "/users"
-        endpoints:
-          findByEmail: "/findByEmail"
+      path: "/users"
+      endpoints:
+        findByEmail: "/findByEmail"
+    domain:
+      path: "/domain"
+      endpoints:
+        finByAllFilters: "/findByAllFilters"
