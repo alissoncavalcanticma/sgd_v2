@@ -14,7 +14,7 @@ public interface DomainRepository  extends JpaRepository<Domain, Long> {
     @Query(nativeQuery = true, value = """
             SELECT * 
             FROM dominios dm
-            WHERE (id IS NULL OR dm.id = :id)
+            WHERE (:id IS NULL OR dm.id = :id)
             AND (:ativo IS NULL OR dm.ativo = :ativo)
             AND (:grupo IS NULL OR dm.grupo = :grupo)
             """)
