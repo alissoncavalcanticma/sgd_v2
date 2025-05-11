@@ -20,9 +20,9 @@ public class DomainResourceImpl implements DomainResource {
     private final DomainService domainService;
 
     @Override
-    public ResponseEntity<List<Domain>> findByAllFilters(@RequestParam(required = false) Long id, @RequestParam(required = false)Boolean active, @RequestParam(required = false) String group) {
+    public ResponseEntity<List<Domain>> findByAllFilters(@RequestParam(required = false) Long id, @RequestParam(required = false) Boolean active, @RequestParam(required = false) String group) {
 
-        List<Domain> domainList = domainService.findByAllFilters(id, ((active == true) ? 1 : 0), group);
+        List<Domain> domainList = domainService.findByAllFilters(id, ((active == true || active == null)? 1 : 0), group);
         if(domainList.isEmpty()){
             return ResponseEntity.noContent().build();
         }

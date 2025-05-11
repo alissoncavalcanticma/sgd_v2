@@ -9,5 +9,5 @@ import java.util.List;
 public interface DomainResource {
 
     @GetMapping
-    ResponseEntity<List<Domain>> findByAllFilters(Long id, Boolean active, String group);
+    ResponseEntity<List<Domain>> findByAllFilters(Long id, Boolean  active, String group);
 }
