@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface DomainRepository  extends JpaRepository<Domain, Long> {
@@ -16,7 +17,7 @@ public interface DomainRepository  extends JpaRepository<Domain, Long> {
             FROM dominios dm
             WHERE (:id IS NULL OR dm.id = :id)
             AND (:ativo IS NULL OR dm.ativo = :ativo)
-            AND (:grupo IS NULL OR dm.grupo = :grupo)
+            AND (:grupo IS NULL OR dm.grupo = :grupo);
             """)
-    List<Domain> findByAllFilters(@Param("id") Long id, @Param("ativo") Integer active, @Param("grupo") String group);
+    Optional<List<Domain>> findByAllFilters(@Param("id") Long id, @Param("ativo") Integer active, @Param("grupo") String group);
 }
