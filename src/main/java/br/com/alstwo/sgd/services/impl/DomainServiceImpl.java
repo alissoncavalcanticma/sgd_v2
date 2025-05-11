@@ -34,6 +34,6 @@ public class DomainServiceImpl implements DomainService {
     @Override
     public List<Domain> findByAllFilters(Long id, Integer active, String group) {
         System.out.printf("ID: %s | ACTIVE: %s | GROUP: %s%n", id, active, group);
-        return domainRepository.findByAllFilters(id, active, group).orElseThrow(() -> new ObjectNotFoundException("Domínio não encontrado."));
+        return domainRepository.findByAllFilters(id, active, ((group != null)? "%"+ group + "%" : group)).orElseThrow(() -> new ObjectNotFoundException("Domínio não encontrado."));
     }
 }

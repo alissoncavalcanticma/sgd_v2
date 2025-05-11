@@ -17,7 +17,7 @@ public interface DomainRepository  extends JpaRepository<Domain, Long> {
             FROM dominios dm
             WHERE (:id IS NULL OR dm.id = :id)
             AND (:ativo IS NULL OR dm.ativo = :ativo)
-            AND (:grupo IS NULL OR dm.grupo = :grupo);
+            AND (:grupo IS NULL OR dm.grupo LIKE :grupo);
             """)
     Optional<List<Domain>> findByAllFilters(@Param("id") Long id, @Param("ativo") Integer active, @Param("grupo") String group);
 }
