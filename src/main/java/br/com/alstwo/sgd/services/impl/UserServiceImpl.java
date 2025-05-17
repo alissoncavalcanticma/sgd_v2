@@ -67,4 +67,9 @@ public class UserServiceImpl implements UserService {
         return userOptional.orElse(null);
     }
 
+    @Override
+    public List<User> findByAllFilters(Long id, String email, Integer status) {
+        return userRepository.findByAllFilters(id, (email == null)? null : '%' + email + '%', status).orElseThrow(() -> new ObjectNotFoundException("Domínio não encontrado."));
+    }
+
 }

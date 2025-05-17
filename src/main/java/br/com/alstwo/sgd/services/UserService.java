@@ -12,4 +12,5 @@ public interface UserService {
     void delete(Long id);
     /*== Aux method ==*/
     User findByEmail(String email);
+    List<User> findByAllFilters(Long id, String email, Integer status);
 }

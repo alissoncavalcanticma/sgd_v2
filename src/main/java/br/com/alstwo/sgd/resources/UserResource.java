@@ -16,8 +16,10 @@ public interface UserResource {
     @GetMapping(value = "/{id}")
     ResponseEntity<UserDTO> findById(Long id);
 
+    /*
     @GetMapping
     ResponseEntity<List<UserDTO>> findAll();
+    */
 
     @PostMapping
     ResponseEntity<UserDTO> create(UserDTO userDTO);
@@ -27,6 +29,10 @@ public interface UserResource {
 
     @DeleteMapping(value = "/{id}")
     ResponseEntity<Object> delete(Long id);
+
+    @GetMapping
+    ResponseEntity<List<UserDTO>> findByAllFilters(Long id, String email, Integer status);
+
 
     /*    ResponseEntity<UserDTO> findByEmail(String email);*/
 
