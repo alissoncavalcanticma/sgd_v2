@@ -47,23 +47,6 @@ public class UserResourceImpl implements UserResource {
         return ResponseEntity.ok().body(mapper.map(user, UserDTO.class));
     }
 
-    @Override
-    /* Anotações do Swagger */
-    @Operation(summary = "Consulta de usuários", description = "Consulta de lista de usuários", tags = "Users") //Annotation of swagger
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Retorna lista de usuários."),
-            @ApiResponse(responseCode = "400", description = "Erro na consulta.")
-    })
-    /* Anotações do Swagger */
-    //@Tag(name = "Users") //Annotation of Swagger
-    public ResponseEntity<List<UserDTO>> findAll(){
-        List<User> users = userService.findAll();
-        if(users.isEmpty()){
-            return ResponseEntity.noContent().build();
-        }
-        List<UserDTO> userDTO = users.stream().map(x -> mapper.map(x, UserDTO.class)).toList();
-        return ResponseEntity.ok().body(userDTO);
-    }
 /*
     @Override
     @GetMapping("/findByEmail")
@@ -130,5 +113,23 @@ public class UserResourceImpl implements UserResource {
     public ResponseEntity<Object> delete(@PathVariable Long id){
         userService.delete(id);
         return ResponseEntity.ok().body(Map.of("success", true, "deletedUserID", id));
+    }
+
+
+    @Override
+    /* Anotações do Swagger */
+    @Operation(summary = "Consulta de usuários", description = "Consulta de usuários por vários filtros", tags = "Users")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Retorna usuário"),
+            @ApiResponse(responseCode = "400", description = "Erro ao consultar usuário")
+    }
+    )
+    public ResponseEntity<List<UserDTO>> findByAllFilters(@RequestParam(required = false) Long id, @RequestParam(required = false) String email, @RequestParam(required = false) Integer status){
+        List<UserDTO> userListDTO = userService.findByAllFilters(id, email, status).stream().map(x -> mapper.map(x, UserDTO.class)).toList();
+        if(userListDTO.isEmpty()){
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok().body(userListDTO);
+
     }
 }

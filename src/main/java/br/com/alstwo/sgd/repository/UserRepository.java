@@ -18,8 +18,8 @@ public interface UserRepository extends JpaRepository<User, Long>{
             SELECT *
             FROM usuarios u
             WHERE (:id IS NULL OR u.id = :id)
-            AND (:email IS NULL OR u.email LIKE '%:email%')
+            AND (:email IS NULL OR u.email LIKE :email)
             AND (:status IS NULL OR u.status = :status);
             """ )
-    Optional<List<User>> findByAllFilters(@Param("id") Integer id, @Param("email") String email, @Param("status") Integer status);
+    Optional<List<User>> findByAllFilters(@Param("id") Long id, @Param("email") String email, @Param("status") Integer status);
 }
