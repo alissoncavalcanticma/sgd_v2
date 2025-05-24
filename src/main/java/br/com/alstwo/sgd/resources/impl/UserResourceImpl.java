@@ -120,8 +120,8 @@ public class UserResourceImpl implements UserResource {
     /* Anotações do Swagger */
     @Operation(summary = "Consulta de usuários", description = "Consulta de usuários por vários filtros", tags = "Users")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Retorna usuário"),
-            @ApiResponse(responseCode = "400", description = "Erro ao consultar usuário")
+            @ApiResponse(responseCode = "200", description = "Retorna usuários"),
+            @ApiResponse(responseCode = "400", description = "Erro ao consultar usuários")
     }
     )
     public ResponseEntity<List<UserDTO>> findByAllFilters(@RequestParam(required = false) Long id, @RequestParam(required = false) String email, @RequestParam(required = false) Integer status){

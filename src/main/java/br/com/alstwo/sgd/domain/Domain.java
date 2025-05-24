@@ -2,11 +2,10 @@ package br.com.alstwo.sgd.domain;
 
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @RequiredArgsConstructor
+@AllArgsConstructor
 @Setter
 @Getter
 @Entity
@@ -24,7 +23,7 @@ public class Domain {
     @Column(name = "grupo")
     private String group;
     @Column(name = "ativo")
-    private Boolean active;
+    private Integer active;
     @Column(name = "observacao")
     private String observation;
 }

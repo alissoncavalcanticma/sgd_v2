@@ -18,7 +18,16 @@ public class DomainServiceImpl implements DomainService {
 
     @Override
     public Domain create(Domain domain) {
-        return null;
+       Optional<List<Domain>> dm = domainRepository.findByAllFilters(null, 1, domain.getGroup());
+       if((!dm.get().isEmpty())){
+           boolean result = dm.map(lista -> lista.stream()
+                                                                .anyMatch(x-> x.getCode().equals(domain.getCode()))
+                            ).orElse(false);
+           if(result == true) {
+               return null;
+           }
+       }
+       return domainRepository.save(domain);
     }
 
     @Override
@@ -37,3 +46,4 @@ public class DomainServiceImpl implements DomainService {
         return domainRepository.findByAllFilters(id, active, ((group != null)? "%"+ group + "%" : group)).orElseThrow(() -> new ObjectNotFoundException("Domínio não encontrado."));
     }
 }
+
