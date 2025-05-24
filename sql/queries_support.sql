@@ -34,3 +34,6 @@ SET @grupo := 'ADMIN';
 SELECT * 
 FROM dominios dm
 WHERE dm.ativo = 1
+
+
+select * from usuarios where email like '%alis%';
