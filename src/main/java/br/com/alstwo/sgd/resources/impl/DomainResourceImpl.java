@@ -9,10 +9,14 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,6 +26,22 @@ import java.util.Optional;
 public class DomainResourceImpl implements DomainResource {
 
     private final DomainService domainService;
+
+
+    @Override
+    /* Anotações do Swagger */
+    @Operation(summary = "Cadastro de domínios", description = "Cadastro de domínios", tags = "Domain")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Domínio criado"),
+            @ApiResponse(responseCode = "400", description = "Erro de criação de domínio")
+    }
+    )
+    public ResponseEntity<Domain> create(@RequestBody Domain domain){
+        Domain dm = domainService.create(domain);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/id").buildAndExpand(domain.getId()).toUri();
+        return ResponseEntity.created(uri).body(domain);
+    }
+
 
     @Override
     /* Anotações do Swagger */
