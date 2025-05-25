@@ -37,15 +37,13 @@ CREATE TABLE `dominios` (
 	`id` BIGINT NOT NULL AUTO_INCREMENT,
 	`codigo` INT NOT NULL DEFAULT '0',
 	`descricao` VARCHAR(50) NOT NULL DEFAULT '0' COLLATE 'utf8mb3_general_ci',
-	`ativo` TINYINT(1) NOT NULL DEFAULT '1',
+	`ativo` INT(1) NOT NULL DEFAULT '1',
 	`observacao` VARCHAR(250) NULL DEFAULT '0' COLLATE 'utf8mb3_general_ci',
 	`grupo` VARCHAR(50) NULL DEFAULT '0' COLLATE 'utf8mb3_general_ci',
 	PRIMARY KEY (`id`) USING BTREE
 )
 COLLATE='utf8mb4_0900_ai_ci'
 ENGINE=InnoDB
-;
-
 ;
 
 
