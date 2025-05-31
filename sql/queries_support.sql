@@ -8,7 +8,7 @@ dominios
 -- ALTER TABLE usuarios MODIFY id BIGINT AUTO_INCREMENT, NOT NULL;
 -- ALTER TABLE usuarios MODIFY email STRING(255);
 -- ALTER TABLE usuarios ADD created_at TIMESTAMP NULL;
--- ALTER TABLE usuarios ADD updated_at TIMESTAMP NULL;
+-- ALTER TABLE usuarios ADD updated_at TIMESTAMP NULL;usuariosresumos
 
 -- INSERT INTO `tb_user` (`id`, `email`, `name`, `nickname`, `password`, `user`) VALUES (1, 'alisson@alisson.com.br', 'Alisson Cavalcanti', 'Alisson', '123', 'als');
 
