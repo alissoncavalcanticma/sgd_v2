@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
--- Servidor:                     localhost
--- Versão do servidor:           9.2.0 - MySQL Community Server - GPL
+-- Servidor:                     127.0.0.1
+-- Versão do servidor:           9.3.0 - MySQL Community Server - GPL
 -- OS do Servidor:               Linux
 -- HeidiSQL Versão:              12.10.0.7000
 -- --------------------------------------------------------
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `acessos` (
   KEY `operador` (`operador`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=9851 DEFAULT CHARSET=utf8mb3;
 
--- Copiando dados para a tabela bd_sgd.acessos: ~9.276 rows (aproximadamente)
+-- Copiando dados para a tabela bd_sgd.acessos: ~9.572 rows (aproximadamente)
 INSERT INTO `acessos` (`id`, `dc`, `turno`, `motivo`, `servico`, `equipamento`, `obs`, `solicitante`, `empresa`, `operador`, `data`, `entrada`, `saida`, `meio_de_contato`, `solicitacao_acesso`, `agendamento`, `chegada`, `area_atuacao`, `registro`, `operador_2`) VALUES
 	(262, 'FCA', 2, 'Checklist', 'N/A', 'N/A', 'N/A', 'ALISSON', 'NPO', 2, '2016-10-05', '13:04:00', '13:06:00', 'Outro', '13:04:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
 	(263, 'FCA', 2, 'Checklist', 'N/A', 'N/A', 'N/A', 'ALISSON', 'NPO', 2, '2016-10-07', '14:12:00', '14:16:00', 'Outro', '14:12:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
@@ -3720,8 +3720,7 @@ INSERT INTO `acessos` (`id`, `dc`, `turno`, `motivo`, `servico`, `equipamento`, 
 	(3932, 'TR', 3, 'Checklist', 'N/A', 'N/A', 'N/A', 'Marcio', 'npo', 10, '2017-05-02', '21:00:00', '21:05:00', 'Outro', '21:00:00', '21:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
 	(3933, 'TR', 1, 'Checklist realizado.', 'N/A', 'N/A', 'N/A', 'ALMIR', 'npo', 7, '2017-05-03', '04:40:00', '04:44:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Sistema', '0000-00-00 00:00:00', 0),
 	(3934, 'TR', 2, 'IDENTIFICAÇÃO E CONEXÃO DE PONTO DE REDE DA SALA DA EMPRESA HEAD.', 'N/A', 'RACK 01A, PATCH PANEL PP16, PORTA PT02.', 'N/A', 'LUCAS', 'N&C', 2, '2017-05-03', '10:35:00', '10:50:00', 'Presencial', '00:00:00', '00:00:00', '00:00:00', 'Conectividade', '0000-00-00 00:00:00', 0),
-	(3935, 'TR', 2, 'CHECKLIST', 'N/A', 'N/A', 'N/A', 'GUILHERME', 'NPO', 3, '2017-05-03', '10:36:00', '10:40:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0);
-INSERT INTO `acessos` (`id`, `dc`, `turno`, `motivo`, `servico`, `equipamento`, `obs`, `solicitante`, `empresa`, `operador`, `data`, `entrada`, `saida`, `meio_de_contato`, `solicitacao_acesso`, `agendamento`, `chegada`, `area_atuacao`, `registro`, `operador_2`) VALUES
+	(3935, 'TR', 2, 'CHECKLIST', 'N/A', 'N/A', 'N/A', 'GUILHERME', 'NPO', 3, '2017-05-03', '10:36:00', '10:40:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
 	(3936, 'TR', 3, 'Checklist', 'N/A', 'N/A', 'N/A', 'Marcio', 'npo', 10, '2017-05-03', '18:00:00', '18:05:00', 'Outro', '18:00:00', '18:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
 	(3937, 'TR', 1, 'Realizar checklist.', 'N/A', 'N/A', 'N/A', 'ALMIR', 'npo', 7, '2017-05-04', '05:23:00', '05:27:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
 	(3938, 'TR', 2, 'LIMPEZA DO LOCAL', 'N/A', 'N/A', 'N/A', 'MARLI', 'CENTRO', 2, '2017-05-04', '09:37:00', '09:44:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
@@ -7899,8 +7898,7 @@ INSERT INTO `acessos` (`id`, `dc`, `turno`, `motivo`, `servico`, `equipamento`, 
 	(8110, 'SP', 3, 'Checklist', 'N/A', 'N/A', 'N/A', 'Marcio', 'NPO', 10, '2018-03-08', '19:20:00', '19:28:00', 'Outro', '19:20:00', '19:20:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
 	(8111, 'SP', 1, 'Checklist realizado.', 'N/A', 'N/A', 'N/A', 'felipe', 'NPO', 8, '2018-03-09', '05:05:00', '05:09:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Sistema', '0000-00-00 00:00:00', 0),
 	(8112, 'SP', 2, 'CHECKLIST', 'N/A', 'N/A', 'N/A', 'GUILHERME', 'NPO', 3, '2018-03-09', '13:20:00', '13:25:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
-	(8113, 'SP', 3, 'Checklist', 'N/A', 'N/A', 'N/A', 'Marcio', 'NPO', 10, '2018-03-09', '19:20:00', '19:28:00', 'Outro', '19:20:00', '19:20:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0);
-INSERT INTO `acessos` (`id`, `dc`, `turno`, `motivo`, `servico`, `equipamento`, `obs`, `solicitante`, `empresa`, `operador`, `data`, `entrada`, `saida`, `meio_de_contato`, `solicitacao_acesso`, `agendamento`, `chegada`, `area_atuacao`, `registro`, `operador_2`) VALUES
+	(8113, 'SP', 3, 'Checklist', 'N/A', 'N/A', 'N/A', 'Marcio', 'NPO', 10, '2018-03-09', '19:20:00', '19:28:00', 'Outro', '19:20:00', '19:20:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
 	(8114, 'SP', 1, 'Realizar checklist.', 'N/A', 'N/A', 'N/A', 'RONNE', 'FMM', 7, '2018-03-10', '01:18:00', '01:22:00', 'Telefone', '01:09:00', '00:00:00', '00:00:00', 'Servidores', '0000-00-00 00:00:00', 0),
 	(8115, 'SP', 1, 'Realizar checklist.', 'N/A', 'N/A', 'N/A', 'ALMIR', 'NPO', 7, '2018-03-10', '05:04:00', '05:08:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
 	(8116, 'SP', 2, 'CHECKLIST', 'N/A', 'N/A', 'N/A', 'ALISSON', 'NPO', 2, '2018-03-10', '13:55:00', '13:59:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
@@ -9728,15 +9726,17 @@ CREATE TABLE IF NOT EXISTS `dominios` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `codigo` int NOT NULL DEFAULT '0',
   `descricao` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT '0',
-  `ativo` tinyint(1) NOT NULL DEFAULT (1),
+  `ativo` int NOT NULL DEFAULT (1),
   `observacao` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT '0',
   `grupo` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Copiando dados para a tabela bd_sgd.dominios: ~1 rows (aproximadamente)
 INSERT INTO `dominios` (`id`, `codigo`, `descricao`, `ativo`, `observacao`, `grupo`) VALUES
-	(1, 1, 'testeDomain', 0, 'teste', 'TESTE_GRUPO');
+	(1, 1, 'testeDomain', 0, 'teste', 'TESTE_GRUPO'),
+	(2, 1, 'Teste', 1, 'testeMain', 'TXT'),
+	(3, 2, 'Teste', 1, 'testeMain', 'TXT');
 
 -- Copiando estrutura para tabela bd_sgd.resumos
 CREATE TABLE IF NOT EXISTS `resumos` (
@@ -9773,9 +9773,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8mb3;
 
--- Copiando dados para a tabela bd_sgd.usuarios: ~31 rows (aproximadamente)
+-- Copiando dados para a tabela bd_sgd.usuarios: ~34 rows (aproximadamente)
 INSERT INTO `usuarios` (`id`, `usuario`, `senha`, `email`, `apelido`, `nome_completo`, `status`, `created_at`, `updated_at`) VALUES
 	(1, 'admin', 'admin', 'admin@npo.com.br', 'Administrador', '', 1, NULL, NULL),
 	(2, 'alisson', '123', 'alissoncavalcanticma@gmail.com', 'Alisson', 'Alisson Cavalcanti', 0, NULL, NULL),
@@ -9810,7 +9810,14 @@ INSERT INTO `usuarios` (`id`, `usuario`, `senha`, `email`, `apelido`, `nome_comp
 	(99, 'teste', '123', 'alisson@email218.com', 'AlissonCG', 'Alisson', 1, '2025-05-05 03:29:01', '2025-05-05 03:29:01'),
 	(100, 'teste', '123', 'alisson@email245.com', 'AlissonCG', 'Alisson', 1, '2025-05-05 03:30:13', '2025-05-05 03:30:13'),
 	(101, 'teste', '123', 'alisson@email6.com', 'AlissonCG', 'Alisson', 1, '2025-05-05 03:35:15', '2025-05-05 03:35:15'),
-	(102, 'teste', '123', 'alisson@email400.com', 'AlissonCG', 'Alisson', 1, '2025-05-05 03:38:52', '2025-05-05 03:38:52');
+	(102, 'teste', '123', 'alisson@email400.com', 'AlissonCG', 'Alisson', 1, '2025-05-05 03:38:52', '2025-05-05 03:38:52'),
+	(103, 'teste', '123', 'alisson@email602.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 19:07:32', '2025-05-24 19:07:32'),
+	(104, 'teste', '123', 'alisson@email384.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 20:05:54', '2025-05-24 20:05:54'),
+	(105, 'teste', '123', 'alisson@email226.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 20:07:11', '2025-05-24 20:07:11'),
+	(106, 'teste', '123', 'alisson@email700.com', 'AlissonCG', 'Alisson', 1, '2025-05-26 23:02:50', '2025-05-26 23:02:50'),
+	(107, 'teste', '123', 'alisson@email648.com', 'AlissonCG', 'Alisson', 1, '2025-05-26 23:03:38', '2025-05-26 23:03:38'),
+	(108, 'teste', '123', 'alisson@email376.com', 'AlissonCG', 'Alisson', 1, '2025-05-26 23:05:54', '2025-05-26 23:05:54'),
+	(109, 'teste', '123', 'alisson@email98.com', 'AlissonCG', 'Alisson', 1, '2025-05-27 01:22:49', '2025-05-27 01:22:49');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

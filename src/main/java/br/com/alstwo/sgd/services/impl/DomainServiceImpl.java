@@ -20,8 +20,8 @@ public class DomainServiceImpl implements DomainService {
     public Domain create(Domain domain) {
        Optional<List<Domain>> dm = domainRepository.findByAllFilters(null, 1, domain.getGroup());
        if((!dm.get().isEmpty())){
-           boolean result = dm.map(lista -> lista.stream()
-                                                                .anyMatch(x-> x.getCode().equals(domain.getCode()))
+           boolean result = dm.map(
+                   lista -> lista.stream().anyMatch(x-> x.getCode().equals(domain.getCode()))
                             ).orElse(false);
            if(result == true) {
                return null;
@@ -32,12 +32,21 @@ public class DomainServiceImpl implements DomainService {
 
     @Override
     public Domain update(Domain domain) {
+        Optional<List<Domain>> dm = domainRepository.findByAllFilters(domain.getId(), null, null);
+        if(!dm.get().isEmpty()){
+            return domainRepository.save(domain);
+        }
         return null;
     }
 
     @Override
     public void delete(Long id) {
-
+        Optional<List<Domain>> dm = domainRepository.findByAllFilters(id, null, null);
+        if(!dm.get().isEmpty()){
+            domainRepository.deleteById(id);
+        }else{
+            throw new ObjectNotFoundException("Id informado não existe");
+        }
     }
 
     @Override
