@@ -9,10 +9,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -59,5 +56,10 @@ public class DomainResourceImpl implements DomainResource {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok().body(domainList.stream().toList());
+    }
+
+
+    public ResponseEntity<Domain> update(@PathVariable Long id, @RequestBody Domain domain){
+        //Domain dm = domainService.
     }
 }

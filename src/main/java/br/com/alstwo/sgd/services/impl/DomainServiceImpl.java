@@ -54,5 +54,10 @@ public class DomainServiceImpl implements DomainService {
         System.out.printf("ID: %s | ACTIVE: %s | GROUP: %s%n", id, active, group);
         return domainRepository.findByAllFilters(id, active, ((group != null)? "%"+ group + "%" : group)).orElseThrow(() -> new ObjectNotFoundException("Domínio não encontrado."));
     }
+
+    @Override
+    public Domain findById(Long id){
+       return domainRepository.findById(id).orElse(null);
+    }
 }
 

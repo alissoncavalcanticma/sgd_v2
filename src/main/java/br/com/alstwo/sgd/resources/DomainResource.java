@@ -3,7 +3,9 @@ package br.com.alstwo.sgd.resources;
 import br.com.alstwo.sgd.domain.Domain;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
 
@@ -14,4 +16,7 @@ public interface DomainResource {
 
     @GetMapping
     ResponseEntity<List<Domain>> findByAllFilters(Long id, Boolean  active, String group);
+
+    @PutMapping(value = "/{id}")
+    ResponseEntity<Domain> update(Long id, Domain domain);
 }
