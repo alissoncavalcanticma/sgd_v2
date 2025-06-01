@@ -3,11 +3,13 @@ package br.com.alstwo.sgd.resources.impl;
 import br.com.alstwo.sgd.domain.Domain;
 import br.com.alstwo.sgd.resources.DomainResource;
 import br.com.alstwo.sgd.services.DomainService;
+import br.com.alstwo.sgd.services.exceptions.DataIntegrityViolationException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -59,7 +61,23 @@ public class DomainResourceImpl implements DomainResource {
     }
 
 
+    @Override
+    /* Anotações do Swagger */
+    @Operation(summary = "Alteração de domínio", description = "Alteração de domínio", tags = "Domain")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Conforma alteração de domínio"),
+            @ApiResponse(responseCode = "400", description = "Erro ao alterar domínio")
+    }
+    )
+    /* Anotações do Swagger */
     public ResponseEntity<Domain> update(@PathVariable Long id, @RequestBody Domain domain){
-        //Domain dm = domainService.
+        Domain dm = domainService.findById(id);
+        if(dm != null){
+            domain.setId(id);
+            domainService.update(domain);
+            return ResponseEntity.ok().body(domain);
+        }else{
+            throw new DataIntegrityViolationException("Domínio não encontrado.");
+        }
     }
 }
