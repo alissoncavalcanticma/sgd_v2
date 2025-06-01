@@ -32,8 +32,9 @@ public class DomainServiceImpl implements DomainService {
 
     @Override
     public Domain update(Domain domain) {
-        Optional<List<Domain>> dm = domainRepository.findByAllFilters(domain.getId(), null, null);
-        if(!dm.get().isEmpty()){
+        Optional<Domain> dm = domainRepository.findById(domain.getId());
+        if(!dm.get().equals(null)){
+            //dm.get().getCode()
             return domainRepository.save(domain);
         }
         return null;
@@ -53,6 +54,11 @@ public class DomainServiceImpl implements DomainService {
     public List<Domain> findByAllFilters(Long id, Integer active, String group) {
         System.out.printf("ID: %s | ACTIVE: %s | GROUP: %s%n", id, active, group);
         return domainRepository.findByAllFilters(id, active, ((group != null)? "%"+ group + "%" : group)).orElseThrow(() -> new ObjectNotFoundException("Domínio não encontrado."));
+    }
+
+    @Override
+    public Domain findById(Long id){
+       return domainRepository.findById(id).orElse(null);
     }
 }
 
