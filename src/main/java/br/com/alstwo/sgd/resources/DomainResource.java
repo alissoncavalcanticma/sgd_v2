@@ -16,4 +16,7 @@ public interface DomainResource {
 
     @PatchMapping(value = "/{id}")
     ResponseEntity<Domain> update(Long id, Domain domain);
+
+    @DeleteMapping(value = "/{id}")
+    ResponseEntity<Object> delete(Long id);
 }

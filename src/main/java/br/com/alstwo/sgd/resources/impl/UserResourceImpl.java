@@ -96,15 +96,15 @@ public class UserResourceImpl implements UserResource {
                                     mediaType = "application/json",
                                     schema = @Schema(
                                                 type = "object",
-                                                example = "{\"success\": true, \"deletedUserID\": 1}"
+                                                example = "{\"success\": true, \"deletedId\": 1}"
                     )
             )),
-            @ApiResponse(responseCode = "400", description = "Tentativa de deleção não realizada.",
+            @ApiResponse(responseCode = "400", description = "Tentativa de deleção falhou..",
                     content = @Content(
                                     mediaType = "application/json",
                                     schema = @Schema(
                                             type = "object",
-                                            example = "{\"success\": false, \"deletedUserID\": null}"
+                                            example = "{\"success\": false, \"deletedId\": null}"
                                     )
 
             ))
@@ -112,7 +112,7 @@ public class UserResourceImpl implements UserResource {
     /* Anotações do Swagger  */
     public ResponseEntity<Object> delete(@PathVariable Long id){
         userService.delete(id);
-        return ResponseEntity.ok().body(Map.of("success", true, "deletedUserID", id));
+        return ResponseEntity.ok().body(Map.of("success", true, "deletedId", id));
     }
 
 

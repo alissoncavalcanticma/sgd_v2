@@ -5,6 +5,8 @@ import br.com.alstwo.sgd.resources.DomainResource;
 import br.com.alstwo.sgd.services.DomainService;
 import br.com.alstwo.sgd.services.exceptions.DataIntegrityViolationException;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.annotation.Resource;
@@ -17,6 +19,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -79,5 +82,33 @@ public class DomainResourceImpl implements DomainResource {
         }else{
             throw new DataIntegrityViolationException("Domínio não encontrado.");
         }
+    }
+
+    @Override
+    /* Anotações do Swagger  */
+    @Operation(summary = "Deleção de domínio", description = "Deleção de cadastro de domínio", tags = "Domain")  //Annotation of swagger
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Deleção realizada com sucesso.",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(
+                                    type = "object",
+                                    example = "{\"success\": true, \"deletedId\": 1}"
+                            )
+                    )),
+            @ApiResponse(responseCode = "400", description = "Tentativa de deleção falhou.",
+                    content = @Content(
+                            mediaType = "application/json",
+                            schema = @Schema(
+                                    type = "object",
+                                    example = "{\"success\": false, \"deletedId\": null}"
+                            )
+
+                    ))
+    })
+    /* Anotações do Swagger  */
+    public ResponseEntity<Object> delete(@PathVariable Long id){
+        domainService.delete(id);
+        return ResponseEntity.ok().body(Map.of("success", true, "deletedId", id));
     }
 }
