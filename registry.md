@@ -40,6 +40,8 @@ CREATE TABLE `dominios` (
 	`ativo` INT(1) NOT NULL DEFAULT '1',
 	`observacao` VARCHAR(250) NULL DEFAULT '0' COLLATE 'utf8mb3_general_ci',
 	`grupo` VARCHAR(50) NULL DEFAULT '0' COLLATE 'utf8mb3_general_ci',
+	`created_at` TIMESTAMP NULL,
+	`updated_at` TIMESTAMP NULL,
 	PRIMARY KEY (`id`) USING BTREE
 )
 COLLATE='utf8mb4_0900_ai_ci'

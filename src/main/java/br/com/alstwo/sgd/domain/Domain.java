@@ -4,6 +4,10 @@ package br.com.alstwo.sgd.domain;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.Instant;
 
 @RequiredArgsConstructor
 @AllArgsConstructor
@@ -28,4 +32,12 @@ public class Domain {
     private Integer active;
     @Column(name = "observacao")
     private String observation;
+
+    @CreationTimestamp
+    @Column(name = "created_at",nullable = false, updatable = false)
+    private Instant created_at;
+
+    @UpdateTimestamp
+    @Column(name = "updated_at", nullable = false)
+    private Instant updated_at;
 }

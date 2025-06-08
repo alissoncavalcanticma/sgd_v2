@@ -3,7 +3,6 @@ package br.com.alstwo.sgd.services;
 import br.com.alstwo.sgd.domain.Domain;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface DomainService {
 

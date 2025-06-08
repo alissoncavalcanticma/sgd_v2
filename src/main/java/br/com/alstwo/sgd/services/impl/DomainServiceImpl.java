@@ -17,11 +17,16 @@ public class DomainServiceImpl implements DomainService {
     private final DomainRepository domainRepository;
 
     @Override
+    public Domain findById(Long id){
+        return domainRepository.findById(id).orElse(null);
+    }
+
+    @Override
     public Domain create(Domain domain) {
        Optional<List<Domain>> dm = domainRepository.findByAllFilters(null, 1, domain.getGroup());
        if((!dm.get().isEmpty())){
            boolean result = dm.map(
-                   lista -> lista.stream().anyMatch(x-> x.getCode().equals(domain.getCode()))
+                   item -> item.stream().anyMatch(x-> x.getCode().equals(domain.getCode()))
                             ).orElse(false);
            if(result == true) {
                return null;
@@ -42,23 +47,14 @@ public class DomainServiceImpl implements DomainService {
 
     @Override
     public void delete(Long id) {
-        Optional<List<Domain>> dm = domainRepository.findByAllFilters(id, null, null);
-        if(!dm.get().isEmpty()){
-            domainRepository.deleteById(id);
-        }else{
-            throw new ObjectNotFoundException("Id informado não existe");
-        }
+        domainRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Id informado não existe!"));
+        domainRepository.deleteById(id);
     }
 
     @Override
     public List<Domain> findByAllFilters(Long id, Integer active, String group) {
         System.out.printf("ID: %s | ACTIVE: %s | GROUP: %s%n", id, active, group);
         return domainRepository.findByAllFilters(id, active, ((group != null)? "%"+ group + "%" : group)).orElseThrow(() -> new ObjectNotFoundException("Domínio não encontrado."));
-    }
-
-    @Override
-    public Domain findById(Long id){
-       return domainRepository.findById(id).orElse(null);
     }
 }
 

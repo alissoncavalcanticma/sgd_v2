@@ -1,6 +1,6 @@
 -- SELECT * FROM usuarios;
 
-dominios
+
 
 
 -- Users
@@ -8,7 +8,7 @@ dominios
 -- ALTER TABLE usuarios MODIFY id BIGINT AUTO_INCREMENT, NOT NULL;
 -- ALTER TABLE usuarios MODIFY email STRING(255);
 -- ALTER TABLE usuarios ADD created_at TIMESTAMP NULL;
--- ALTER TABLE usuarios ADD updated_at TIMESTAMP NULL;usuariosresumos
+-- ALTER TABLE usuarios ADD updated_at TIMESTAMP NULL;
 
 -- INSERT INTO `tb_user` (`id`, `email`, `name`, `nickname`, `password`, `user`) VALUES (1, 'alisson@alisson.com.br', 'Alisson Cavalcanti', 'Alisson', '123', 'als');
 
@@ -36,4 +36,7 @@ FROM dominios dm
 WHERE dm.ativo = 1
 
 
-select * from usuarios where email like '%alis%';
+select * from usuarios where email like '%alis%';dominios
+
+-- ALTER TABLE dominios ADD created_at TIMESTAMP NULL;
+-- ALTER TABLE dominios ADD updated_at TIMESTAMP NULL;
