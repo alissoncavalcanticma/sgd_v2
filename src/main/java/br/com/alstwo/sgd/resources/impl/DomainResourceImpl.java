@@ -1,6 +1,7 @@
 package br.com.alstwo.sgd.resources.impl;
 
 import br.com.alstwo.sgd.domain.Domain;
+import br.com.alstwo.sgd.domain.dto.DomainDTO;
 import br.com.alstwo.sgd.resources.DomainResource;
 import br.com.alstwo.sgd.services.DomainService;
 import br.com.alstwo.sgd.services.exceptions.DataIntegrityViolationException;
@@ -11,6 +12,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,6 +31,8 @@ public class DomainResourceImpl implements DomainResource {
 
     private final DomainService domainService;
 
+    private final ModelMapper mapper;
+
 
     @Override
     /* Anotações do Swagger */
@@ -38,10 +42,10 @@ public class DomainResourceImpl implements DomainResource {
             @ApiResponse(responseCode = "400", description = "Erro de criação de domínio")
     }
     )
-    public ResponseEntity<Domain> create(@RequestBody Domain domain){
-        Domain dm = domainService.create(domain);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/id").buildAndExpand(domain.getId()).toUri();
-        return ResponseEntity.created(uri).body(domain);
+    public ResponseEntity<DomainDTO> create(@RequestBody DomainDTO domain){
+        Domain dm = domainService.create(mapper.map(domain, Domain.class));
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/id").buildAndExpand(dm.getId()).toUri();
+        return ResponseEntity.created(uri).body(mapper.map(dm, DomainDTO.class));
     }
 
 
@@ -54,13 +58,13 @@ public class DomainResourceImpl implements DomainResource {
         }
     )
     /* Anotações do Swagger */
-    public ResponseEntity<List<Domain>> findByAllFilters(@RequestParam(required = false) Long id, @RequestParam(required = false) Boolean active, @RequestParam(required = false) String group) {
+    public ResponseEntity<List<DomainDTO>> findByAllFilters(@RequestParam(required = false) Long id, @RequestParam(required = false) Boolean active, @RequestParam(required = false) String group) {
 
-        List<Domain> domainList = domainService.findByAllFilters(id, (active != null) ? ((active == true)? 1 : 0) : null, group);
+        List<DomainDTO> domainList = domainService.findByAllFilters(id, (active != null) ? ((active == true)? 1 : 0) : null, group).stream().map(x -> mapper.map(x, DomainDTO.class)).toList();
         if (domainList.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
-        return ResponseEntity.ok().body(domainList.stream().toList());
+        return ResponseEntity.ok().body(domainList);
     }
 
 
@@ -73,11 +77,11 @@ public class DomainResourceImpl implements DomainResource {
     }
     )
     /* Anotações do Swagger */
-    public ResponseEntity<Domain> update(@PathVariable Long id, @RequestBody Domain domain){
+    public ResponseEntity<DomainDTO> update(@PathVariable Long id, @RequestBody DomainDTO domain){
         Domain dm = domainService.findById(id);
         if(dm != null){
             domain.setId(id);
-            domainService.update(domain);
+            domainService.update(mapper.map(domain, Domain.class));
             return ResponseEntity.ok().body(domain);
         }else{
             throw new DataIntegrityViolationException("Domínio não encontrado.");

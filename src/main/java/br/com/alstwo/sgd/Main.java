@@ -27,6 +27,6 @@ public class Main implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		Double randomNumber = Math.random();
 	  	userService.create(new User(null, "teste", "123", "alisson@email" + (int)((randomNumber * 10)* 99.99) + ".com", "AlissonCG", "Alisson", 1, null, null ));
-		domainService.create(new Domain(null, 2, "Teste", "TXT", 1, "testeMain"));
+		domainService.create(new Domain(null, 2, "Teste", "TXT", 1, "testeMain", null, null));
 	}
 }
