@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `acessos` (
   KEY `operador` (`operador`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=9851 DEFAULT CHARSET=utf8mb3;
 
--- Copiando dados para a tabela bd_sgd.acessos: ~9.572 rows (aproximadamente)
+-- Copiando dados para a tabela bd_sgd.acessos: ~10.031 rows (aproximadamente)
 INSERT INTO `acessos` (`id`, `dc`, `turno`, `motivo`, `servico`, `equipamento`, `obs`, `solicitante`, `empresa`, `operador`, `data`, `entrada`, `saida`, `meio_de_contato`, `solicitacao_acesso`, `agendamento`, `chegada`, `area_atuacao`, `registro`, `operador_2`) VALUES
 	(262, 'FCA', 2, 'Checklist', 'N/A', 'N/A', 'N/A', 'ALISSON', 'NPO', 2, '2016-10-05', '13:04:00', '13:06:00', 'Outro', '13:04:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
 	(263, 'FCA', 2, 'Checklist', 'N/A', 'N/A', 'N/A', 'ALISSON', 'NPO', 2, '2016-10-07', '14:12:00', '14:16:00', 'Outro', '14:12:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
@@ -9729,14 +9729,17 @@ CREATE TABLE IF NOT EXISTS `dominios` (
   `ativo` int NOT NULL DEFAULT (1),
   `observacao` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT '0',
   `grupo` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Copiando dados para a tabela bd_sgd.dominios: ~1 rows (aproximadamente)
-INSERT INTO `dominios` (`id`, `codigo`, `descricao`, `ativo`, `observacao`, `grupo`) VALUES
-	(1, 1, 'testeDomain', 0, 'teste', 'TESTE_GRUPO'),
-	(2, 1, 'Teste', 1, 'testeMain', 'TXT'),
-	(3, 2, 'Teste', 1, 'testeMain', 'TXT');
+-- Copiando dados para a tabela bd_sgd.dominios: ~3 rows (aproximadamente)
+INSERT INTO `dominios` (`id`, `codigo`, `descricao`, `ativo`, `observacao`, `grupo`, `created_at`, `updated_at`) VALUES
+	(1, 1, 'testeDomain', 1, 'teste123', 'TESTE_GRUPO', NULL, NULL),
+	(2, 1, 'Teste', 1, 'testeMain', 'TXT', NULL, NULL),
+	(3, 2, 'Teste', 1, 'testeMain', 'TXT', NULL, NULL),
+	(4, 4, 'Teste', 1, 'testeMain', 'TXT', '2025-06-08 05:13:42', '2025-06-08 05:13:42');
 
 -- Copiando estrutura para tabela bd_sgd.resumos
 CREATE TABLE IF NOT EXISTS `resumos` (
@@ -9761,6 +9764,42 @@ INSERT INTO `resumos` (`id`, `turno`, `data`, `operador`, `resumo`, `ocorrencia_
 	(30, 2, '2019-11-22', 2, '<p><strong>Resumo do turno 2 do dia 18/11.</strong><br />\r\nN&atilde;o houve solicita&ccedil;&atilde;o de visita aos DC&rsquo;s.</p>\r\n\r\n<p>Checklist: As observa&ccedil;&otilde;es dos turnos anteriores continuam (No DC do FCA e DC DR est&atilde;o v&aacute;rios cabos no ch&atilde;o, ferramentas, rack&rsquo;s abertos e servidores fora do lugar).</p>\r\n\r\n<p>V&aacute;rios alertas durante o turno, a maioria com s&iacute;mbolo de manuten&ccedil;&atilde;o, reconhecidos ou resolvidos dentro do tempo padr&atilde;o.<br />\r\nALERTA(S) ATIVO(S):<br />\r\nALERTA(S) RESOLVIDO(S):<br />\r\n-</p>\r\n\r\n<ol>\r\n	<li>Obs: Houve uma solicita&ccedil;&atilde;o de acesso do Wilson Euz&eacute;bio da Pirelli para acessar o DC SP e instalar um roteador com o t&eacute;cnico F&aacute;bio da L&amp;M / Vivo; Foi autorizado apenas verificar o rack Pirelli, pois a atividade n&atilde;o havia sido alinhada com Davi Barros.</li>\r\n</ol>\r\n\r\n<p>Quem assumiu o turno: Cleiton</p>\r\n', NULL, NULL, NULL, NULL),
 	(31, 3, '2019-11-22', 12, '<p><strong><u>Nesse turno houve 3 acessos:</u></strong></p>\r\n\r\n<p><strong>DC SP:&nbsp;</strong></p>\r\n\r\n<ol>\r\n	<li>JACLINTON - DENSO - Troca da fita de backup</li>\r\n	<li>JOSELITO - ELEVA - Manuten&ccedil;&atilde;o no sistema de ar-condicionado. Foi detectado um problema no compressor, possivelmente um vazamento.</li>\r\n</ol>\r\n\r\n<p>OBS: manuten&ccedil;&atilde;o agenda e autorizada.</p>\r\n\r\n<p><strong>DC FCA:</strong></p>\r\n\r\n<ol>\r\n	<li>ANDERSON - ELEVA - Manunten&ccedil;&atilde;o no sistema de ar-condicionado. Tudo funcionando corretamente.</li>\r\n</ol>\r\n\r\n<p>OBS: manuten&ccedil;&atilde;o agenda e autorizada.&nbsp;</p>\r\n\r\n<p>Obs: No DC do FCA e no DC DR est&atilde;o v&aacute;rios cabos no ch&atilde;o, servidores fora do lugar.</p>\r\n\r\n<p>Diversos alertas durante o turno, 1 e-mail enviado com 1 alerta(s),&nbsp;<br />\r\n0 Alerta(s) 0 ativo(s);<br />\r\n1 Alerta(s) resolvido(s).</p>\r\n\r\n<p><em>Quem assumiu o turno: Almir</em></p>\r\n', NULL, NULL, NULL, NULL);
 
+-- Copiando estrutura para tabela bd_sgd.turnos
+CREATE TABLE IF NOT EXISTS `turnos` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `codigo` int NOT NULL,
+  `inicio` time NOT NULL COMMENT 'Início do turno',
+  `fim` time NOT NULL COMMENT 'Término do turno',
+  `descricao` varchar(200) NOT NULL COMMENT 'Detalhes adicionais',
+  `status` int NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL,
+  `updated_at` timestamp NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Copiando dados para a tabela bd_sgd.turnos: ~0 rows (aproximadamente)
+
+-- Copiando estrutura para tabela bd_sgd.turnos_registro
+CREATE TABLE IF NOT EXISTS `turnos_registro` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `usuario_id` bigint NOT NULL COMMENT 'FK para tabela de usuários',
+  `turno_id` bigint NOT NULL COMMENT 'FK para tabela de turnos',
+  `data` date NOT NULL COMMENT 'Data do turno',
+  `abertura` time NOT NULL COMMENT 'Entrada',
+  `encerramento` time DEFAULT NULL COMMENT 'Saída',
+  `status` int NOT NULL DEFAULT '1' COMMENT '0=fechado, 1=aberto',
+  `created_at` timestamp NOT NULL,
+  `updated_at` timestamp NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uq_registro` (`usuario_id`,`turno_id`,`data`),
+  KEY `idx_usuario` (`usuario_id`),
+  KEY `idx_turno` (`turno_id`),
+  CONSTRAINT `fk_registro_turno` FOREIGN KEY (`turno_id`) REFERENCES `turnos` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `fk_registro_usuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Copiando dados para a tabela bd_sgd.turnos_registro: ~0 rows (aproximadamente)
+
 -- Copiando estrutura para tabela bd_sgd.usuarios
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` bigint NOT NULL AUTO_INCREMENT,
@@ -9773,9 +9812,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8mb3;
 
--- Copiando dados para a tabela bd_sgd.usuarios: ~34 rows (aproximadamente)
+-- Copiando dados para a tabela bd_sgd.usuarios: ~51 rows (aproximadamente)
 INSERT INTO `usuarios` (`id`, `usuario`, `senha`, `email`, `apelido`, `nome_completo`, `status`, `created_at`, `updated_at`) VALUES
 	(1, 'admin', 'admin', 'admin@npo.com.br', 'Administrador', '', 1, NULL, NULL),
 	(2, 'alisson', '123', 'alissoncavalcanticma@gmail.com', 'Alisson', 'Alisson Cavalcanti', 0, NULL, NULL),
@@ -9817,7 +9856,21 @@ INSERT INTO `usuarios` (`id`, `usuario`, `senha`, `email`, `apelido`, `nome_comp
 	(106, 'teste', '123', 'alisson@email700.com', 'AlissonCG', 'Alisson', 1, '2025-05-26 23:02:50', '2025-05-26 23:02:50'),
 	(107, 'teste', '123', 'alisson@email648.com', 'AlissonCG', 'Alisson', 1, '2025-05-26 23:03:38', '2025-05-26 23:03:38'),
 	(108, 'teste', '123', 'alisson@email376.com', 'AlissonCG', 'Alisson', 1, '2025-05-26 23:05:54', '2025-05-26 23:05:54'),
-	(109, 'teste', '123', 'alisson@email98.com', 'AlissonCG', 'Alisson', 1, '2025-05-27 01:22:49', '2025-05-27 01:22:49');
+	(109, 'teste', '123', 'alisson@email98.com', 'AlissonCG', 'Alisson', 1, '2025-05-27 01:22:49', '2025-05-27 01:22:49'),
+	(110, 'teste', '123', 'alisson@email958.com', 'AlissonCG', 'Alisson', 1, '2025-05-31 06:27:56', '2025-05-31 06:27:56'),
+	(111, 'teste', '123', 'alisson@email461.com', 'AlissonCG', 'Alisson', 1, '2025-06-01 06:47:04', '2025-06-01 06:47:04'),
+	(112, 'teste', '123', 'alisson@email522.com', 'AlissonCG', 'Alisson', 1, '2025-06-01 07:24:33', '2025-06-01 07:24:33'),
+	(113, 'teste', '123', 'alisson@email109.com', 'AlissonCG', 'Alisson', 1, '2025-06-01 08:44:43', '2025-06-01 08:44:43'),
+	(114, 'teste', '123', 'alisson@email688.com', 'AlissonCG', 'Alisson', 1, '2025-06-07 15:12:16', '2025-06-07 15:12:16'),
+	(115, 'teste', '123', 'alisson@email257.com', 'AlissonCG', 'Alisson', 1, '2025-06-07 20:31:57', '2025-06-07 20:31:57'),
+	(116, 'teste', '123', 'alisson@email332.com', 'AlissonCG', 'Alisson', 1, '2025-06-07 20:34:02', '2025-06-07 20:34:02'),
+	(117, 'teste', '123', 'alisson@email517.com', 'AlissonCG', 'Alisson', 1, '2025-06-07 20:42:45', '2025-06-07 20:42:45'),
+	(118, 'teste', '123', 'alisson@email991.com', 'AlissonCG', 'Alisson', 1, '2025-06-08 00:03:41', '2025-06-08 00:03:41'),
+	(119, 'teste', '123', 'alisson@email887.com', 'AlissonCG', 'Alisson', 1, '2025-06-08 04:13:59', '2025-06-08 04:13:59'),
+	(120, 'teste', '123', 'alisson@email309.com', 'AlissonCG', 'Alisson', 1, '2025-06-08 04:38:28', '2025-06-08 04:38:28'),
+	(121, 'teste', '123', 'alisson@email596.com', 'AlissonCG', 'Alisson', 1, '2025-06-08 04:41:00', '2025-06-08 04:41:00'),
+	(122, 'teste', '123', 'alisson@email650.com', 'AlissonCG', 'Alisson', 1, '2025-06-08 05:11:03', '2025-06-08 05:11:03'),
+	(123, 'teste', '123', 'alisson@email595.com', 'AlissonCG', 'Alisson', 1, '2025-06-08 05:13:42', '2025-06-08 05:13:42');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
