@@ -1,6 +1,7 @@
 package br.com.alstwo.sgd.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -18,9 +19,11 @@ public class DomainDTO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     @JsonProperty(access = JsonProperty.Access.READ_ONLY) //Access.READ_ONLY determina o uso desse campo apenas para métodos de Leitura (GET)
+    @Schema(type = "integer", format = "int64", example = "45")
     private Long id;
 
     @Column(name = "codigo")
+    @Schema(type = "integer", format = "int64", example = "3")
     private Integer code;
 
     @Column(name = "descricao")
@@ -30,6 +33,7 @@ public class DomainDTO {
     private String group;
 
     @Column(name = "ativo")
+    @Schema(type = "integer", format = "int64", example = "1")
     private Integer active;
 
     @Column(name = "observacao")
