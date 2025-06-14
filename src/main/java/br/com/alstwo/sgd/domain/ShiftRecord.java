@@ -9,15 +9,15 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 @Entity
-@Table(name = "turnos")
+@Table(name = "turnos_registro")
 @AllArgsConstructor
 @Getter
 @Setter
-public class Shift {
+public class ShiftRecord {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,19 +25,22 @@ public class Shift {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY) //Access.READ_ONLY determina o uso desse campo apenas para métodos de Leitura (GET)
     private Long id;
 
-    @Column(name = "codigo")
-    private Integer code;
+    @Column(name = "usuario_id")
+    private Long userId;
 
-    @Column(name = "inicio")
-    private LocalTime start;
+    @Column(name = "turno_id")
+    private Long shiftId;
 
-    @Column(name = "fim")
-    private LocalTime end;
+    @Column(name = "data")
+    private LocalDate date;
 
-    @Column(name = "descricao")
-    private String description;
+    @Column(name = "abertura")
+    private LocalDateTime opening;
 
-    private int status;
+    @Column(name = "encerramento")
+    private LocalDateTime closing;
+
+    private Integer status;
 
     @CreationTimestamp
     @Column(name = "created_at",nullable = false, updatable = false)
