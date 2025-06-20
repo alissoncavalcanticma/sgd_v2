@@ -9,7 +9,6 @@ import java.util.List;
 public class ShiftResourceImpl implements ShiftResource {
     @Override
     public ResponseEntity<List<ShiftDTO>> findAll() {
-        Integer numb = 2;
         return null;
     }
 
