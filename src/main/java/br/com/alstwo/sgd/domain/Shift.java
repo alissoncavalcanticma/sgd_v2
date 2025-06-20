@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -15,6 +16,7 @@ import java.time.LocalTime;
 @Entity
 @Table(name = "turnos")
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 public class Shift {
@@ -36,7 +38,7 @@ public class Shift {
     @Column(name = "descricao")
     private String description;
 
-    private int status;
+    private Integer status;
 
     @CreationTimestamp
     @Column(name = "created_at",nullable = false, updatable = false)
