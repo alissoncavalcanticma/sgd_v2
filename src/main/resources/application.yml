@@ -56,3 +56,6 @@ api:
       path: "/domain"
       endpoints:
         finByAllFilters: "/findByAllFilters"
+    shift:
+      path: "/shift"
+      endpoints:
