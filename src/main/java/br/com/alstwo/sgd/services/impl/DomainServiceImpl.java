@@ -37,12 +37,8 @@ public class DomainServiceImpl implements DomainService {
 
     @Override
     public Domain update(Domain domain) {
-        Optional<Domain> dm = domainRepository.findById(domain.getId());
-        if(!dm.get().equals(null)){
-            //dm.get().getCode()
-            return domainRepository.save(domain);
-        }
-        return null;
+        domainRepository.findById(domain.getId()).orElseThrow(() -> new ObjectNotFoundException("Domínio não encontrado."));
+        return domainRepository.save(domain);
     }
 
     @Override

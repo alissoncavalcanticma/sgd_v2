@@ -77,12 +77,12 @@ public class DomainResourceImpl implements DomainResource {
     }
     )
     /* Anotações do Swagger */
-    public ResponseEntity<DomainDTO> update(@PathVariable Long id, @RequestBody DomainDTO domain){
+    public ResponseEntity<DomainDTO> update(@PathVariable Long id, @RequestBody DomainDTO domainDTO){
         Domain dm = domainService.findById(id);
         if(dm != null){
-            domain.setId(id);
-            domainService.update(mapper.map(domain, Domain.class));
-            return ResponseEntity.ok().body(domain);
+            domainDTO.setId(id);
+            domainService.update(mapper.map(domainDTO, Domain.class));
+            return ResponseEntity.ok().body(domainDTO);
         }else{
             throw new DataIntegrityViolationException("Domínio não encontrado.");
         }

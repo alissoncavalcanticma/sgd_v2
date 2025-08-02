@@ -81,7 +81,7 @@ CREATE TABLE turnos_registro (
   created_at       TIMESTAMP        NOT NULL,
   updated_at       TIMESTAMP        NOT NULL,
   PRIMARY KEY (id),
-  UNIQUE KEY uq_registro (usuario_id, turno_id, data_turno),
+  UNIQUE KEY uq_registro (usuario_id, turno_id, data),
   INDEX idx_usuario (usuario_id),
   INDEX idx_turno   (turno_id),
   CONSTRAINT fk_registro_usuario FOREIGN KEY (usuario_id)

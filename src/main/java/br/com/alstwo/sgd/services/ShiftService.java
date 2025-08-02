@@ -10,5 +10,6 @@ public interface ShiftService {
     List<Shift> findAll();
     Shift create(Shift shift);
     Shift update(Shift shift);
+    Shift updateParcial(Shift shift);
     void delete(Long Id);
 }
