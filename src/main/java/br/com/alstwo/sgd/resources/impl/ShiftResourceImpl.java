@@ -50,10 +50,10 @@ public class ShiftResourceImpl implements ShiftResource {
     public ResponseEntity<ShiftDTO> update(@PathVariable Long id, @RequestBody ShiftDTO shiftDTO) {
         Shift shift = shiftService.findById(id);
         if(shift != null){
-            List<Shift> shiftList = shiftService.findAll().stream().filter(x -> ( (x.getCode().equals(shiftDTO.getCode())) || (x.getDescription().equals(shiftDTO.getDescription())) ) && !(x.getId().equals(shiftDTO.getId())) ).toList();
+            List<Shift> shiftList = shiftService.findAll().stream().filter(x -> ( (x.getCode().equals(shiftDTO.getCode())) || (x.getDescription().equals(shiftDTO.getDescription())) ) && !(x.getId().equals(id)) ).toList();
             if(shiftList.isEmpty()){
                 shiftDTO.setId(id);
-                shiftService.update(mapper.map(shiftDTO, Shift.class));
+                shiftService.updateParcial(mapper.map(shiftDTO, Shift.class));
                 return ResponseEntity.ok().body(shiftDTO);
             }
             throw new DataIntegrityViolationException("Registro semelhante já existe cadastrado");

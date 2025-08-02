@@ -5,10 +5,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,7 +31,7 @@ public interface ShiftResource {
     /* Anotações do Swagger */
     ResponseEntity<ShiftDTO> create(ShiftDTO shiftDTO);
 
-    @PutMapping(value = "/{id}")
+    @PatchMapping(value = "/{id}")
     /* Anotações do Swagger */
     @Operation(summary = "Alteração de turno", description = "Alteração de cadastro de turno", tags = "Shift") //Annotation of swagger
     @ApiResponses(value = {
