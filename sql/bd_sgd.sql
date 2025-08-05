@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `acessos` (
   KEY `operador` (`operador`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=9851 DEFAULT CHARSET=utf8mb3;
 
--- Copiando dados para a tabela bd_sgd.acessos: ~9.574 rows (aproximadamente)
+-- Copiando dados para a tabela bd_sgd.acessos: ~8.899 rows (aproximadamente)
 INSERT INTO `acessos` (`id`, `dc`, `turno`, `motivo`, `servico`, `equipamento`, `obs`, `solicitante`, `empresa`, `operador`, `data`, `entrada`, `saida`, `meio_de_contato`, `solicitacao_acesso`, `agendamento`, `chegada`, `area_atuacao`, `registro`, `operador_2`) VALUES
 	(262, 'FCA', 2, 'Checklist', 'N/A', 'N/A', 'N/A', 'ALISSON', 'NPO', 2, '2016-10-05', '13:04:00', '13:06:00', 'Outro', '13:04:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
 	(263, 'FCA', 2, 'Checklist', 'N/A', 'N/A', 'N/A', 'ALISSON', 'NPO', 2, '2016-10-07', '14:12:00', '14:16:00', 'Outro', '14:12:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
@@ -3720,7 +3720,8 @@ INSERT INTO `acessos` (`id`, `dc`, `turno`, `motivo`, `servico`, `equipamento`, 
 	(3932, 'TR', 3, 'Checklist', 'N/A', 'N/A', 'N/A', 'Marcio', 'npo', 10, '2017-05-02', '21:00:00', '21:05:00', 'Outro', '21:00:00', '21:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
 	(3933, 'TR', 1, 'Checklist realizado.', 'N/A', 'N/A', 'N/A', 'ALMIR', 'npo', 7, '2017-05-03', '04:40:00', '04:44:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Sistema', '0000-00-00 00:00:00', 0),
 	(3934, 'TR', 2, 'IDENTIFICAÇÃO E CONEXÃO DE PONTO DE REDE DA SALA DA EMPRESA HEAD.', 'N/A', 'RACK 01A, PATCH PANEL PP16, PORTA PT02.', 'N/A', 'LUCAS', 'N&C', 2, '2017-05-03', '10:35:00', '10:50:00', 'Presencial', '00:00:00', '00:00:00', '00:00:00', 'Conectividade', '0000-00-00 00:00:00', 0),
-	(3935, 'TR', 2, 'CHECKLIST', 'N/A', 'N/A', 'N/A', 'GUILHERME', 'NPO', 3, '2017-05-03', '10:36:00', '10:40:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
+	(3935, 'TR', 2, 'CHECKLIST', 'N/A', 'N/A', 'N/A', 'GUILHERME', 'NPO', 3, '2017-05-03', '10:36:00', '10:40:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0);
+INSERT INTO `acessos` (`id`, `dc`, `turno`, `motivo`, `servico`, `equipamento`, `obs`, `solicitante`, `empresa`, `operador`, `data`, `entrada`, `saida`, `meio_de_contato`, `solicitacao_acesso`, `agendamento`, `chegada`, `area_atuacao`, `registro`, `operador_2`) VALUES
 	(3936, 'TR', 3, 'Checklist', 'N/A', 'N/A', 'N/A', 'Marcio', 'npo', 10, '2017-05-03', '18:00:00', '18:05:00', 'Outro', '18:00:00', '18:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
 	(3937, 'TR', 1, 'Realizar checklist.', 'N/A', 'N/A', 'N/A', 'ALMIR', 'npo', 7, '2017-05-04', '05:23:00', '05:27:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
 	(3938, 'TR', 2, 'LIMPEZA DO LOCAL', 'N/A', 'N/A', 'N/A', 'MARLI', 'CENTRO', 2, '2017-05-04', '09:37:00', '09:44:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
@@ -7898,7 +7899,8 @@ INSERT INTO `acessos` (`id`, `dc`, `turno`, `motivo`, `servico`, `equipamento`, 
 	(8110, 'SP', 3, 'Checklist', 'N/A', 'N/A', 'N/A', 'Marcio', 'NPO', 10, '2018-03-08', '19:20:00', '19:28:00', 'Outro', '19:20:00', '19:20:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
 	(8111, 'SP', 1, 'Checklist realizado.', 'N/A', 'N/A', 'N/A', 'felipe', 'NPO', 8, '2018-03-09', '05:05:00', '05:09:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Sistema', '0000-00-00 00:00:00', 0),
 	(8112, 'SP', 2, 'CHECKLIST', 'N/A', 'N/A', 'N/A', 'GUILHERME', 'NPO', 3, '2018-03-09', '13:20:00', '13:25:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
-	(8113, 'SP', 3, 'Checklist', 'N/A', 'N/A', 'N/A', 'Marcio', 'NPO', 10, '2018-03-09', '19:20:00', '19:28:00', 'Outro', '19:20:00', '19:20:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
+	(8113, 'SP', 3, 'Checklist', 'N/A', 'N/A', 'N/A', 'Marcio', 'NPO', 10, '2018-03-09', '19:20:00', '19:28:00', 'Outro', '19:20:00', '19:20:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0);
+INSERT INTO `acessos` (`id`, `dc`, `turno`, `motivo`, `servico`, `equipamento`, `obs`, `solicitante`, `empresa`, `operador`, `data`, `entrada`, `saida`, `meio_de_contato`, `solicitacao_acesso`, `agendamento`, `chegada`, `area_atuacao`, `registro`, `operador_2`) VALUES
 	(8114, 'SP', 1, 'Realizar checklist.', 'N/A', 'N/A', 'N/A', 'RONNE', 'FMM', 7, '2018-03-10', '01:18:00', '01:22:00', 'Telefone', '01:09:00', '00:00:00', '00:00:00', 'Servidores', '0000-00-00 00:00:00', 0),
 	(8115, 'SP', 1, 'Realizar checklist.', 'N/A', 'N/A', 'N/A', 'ALMIR', 'NPO', 7, '2018-03-10', '05:04:00', '05:08:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
 	(8116, 'SP', 2, 'CHECKLIST', 'N/A', 'N/A', 'N/A', 'ALISSON', 'NPO', 2, '2018-03-10', '13:55:00', '13:59:00', 'Outro', '00:00:00', '00:00:00', '00:00:00', 'Outra', '0000-00-00 00:00:00', 0),
@@ -9726,20 +9728,17 @@ CREATE TABLE IF NOT EXISTS `dominios` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `codigo` int NOT NULL DEFAULT '0',
   `descricao` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT '0',
-  `ativo` int NOT NULL DEFAULT (1),
+  `ativo` int NOT NULL DEFAULT '1',
   `observacao` varchar(250) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT '0',
   `grupo` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Copiando dados para a tabela bd_sgd.dominios: ~4 rows (aproximadamente)
+-- Copiando dados para a tabela bd_sgd.dominios: ~0 rows (aproximadamente)
 INSERT INTO `dominios` (`id`, `codigo`, `descricao`, `ativo`, `observacao`, `grupo`, `created_at`, `updated_at`) VALUES
-	(1, 1, 'testeDomain', 1, 'teste123', 'TESTE_GRUPO', NULL, NULL),
-	(2, 1, 'Teste', 1, 'testeMain', 'TXT', NULL, NULL),
-	(3, 2, 'Teste', 1, 'testeMain', 'TXT', NULL, NULL),
-	(4, 4, 'Teste', 1, 'testeMain', 'TXT', '2025-06-08 05:13:42', '2025-06-08 05:13:42');
+	(1, 4, 'Teste', 1, 'testeMain', 'TXT', '2025-06-25 02:06:58', '2025-06-25 02:06:58');
 
 -- Copiando estrutura para tabela bd_sgd.resumos
 CREATE TABLE IF NOT EXISTS `resumos` (
@@ -9775,13 +9774,12 @@ CREATE TABLE IF NOT EXISTS `turnos` (
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Copiando dados para a tabela bd_sgd.turnos: ~3 rows (aproximadamente)
+-- Copiando dados para a tabela bd_sgd.turnos: ~2 rows (aproximadamente)
 INSERT INTO `turnos` (`id`, `codigo`, `inicio`, `fim`, `descricao`, `status`, `created_at`, `updated_at`) VALUES
-	(1, 1, '14:30:00', '14:30:00', 'Turno 1', 1, '2025-06-20 04:10:38', '2025-06-20 05:46:21'),
-	(4, 2, '15:00:00', '23:59:59', 'Turno 2', 1, '2025-06-20 05:52:32', '2025-06-20 05:52:32'),
-	(5, 3, '15:00:00', '23:59:59', 'Turno 3', 1, '2025-06-20 05:53:16', '2025-06-20 05:53:16');
+	(1, 2, '06:00:00', '15:00:00', 'Turno 2', 0, '2025-08-02 04:14:55', '2025-08-02 07:09:23'),
+	(2, 3, '15:00:00', '23:59:00', 'Turno 3', 1, '2025-08-02 07:17:09', '2025-08-02 07:17:09');
 
 -- Copiando estrutura para tabela bd_sgd.turnos_registro
 CREATE TABLE IF NOT EXISTS `turnos_registro` (
@@ -9800,9 +9798,11 @@ CREATE TABLE IF NOT EXISTS `turnos_registro` (
   KEY `idx_turno` (`turno_id`),
   CONSTRAINT `fk_registro_turno` FOREIGN KEY (`turno_id`) REFERENCES `turnos` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `fk_registro_usuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Copiando dados para a tabela bd_sgd.turnos_registro: ~0 rows (aproximadamente)
+INSERT INTO `turnos_registro` (`id`, `usuario_id`, `turno_id`, `data`, `abertura`, `encerramento`, `status`, `created_at`, `updated_at`) VALUES
+	(1, 2, 2, '2025-08-04', '2025-08-04 10:44:38', '2025-08-04 23:45:45', 1, '2025-08-04 23:45:59', '2025-08-04 23:46:01');
 
 -- Copiando estrutura para tabela bd_sgd.usuarios
 CREATE TABLE IF NOT EXISTS `usuarios` (
@@ -9816,9 +9816,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=160 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=152 DEFAULT CHARSET=utf8mb3;
 
--- Copiando dados para a tabela bd_sgd.usuarios: ~91 rows (aproximadamente)
+-- Copiando dados para a tabela bd_sgd.usuarios: ~75 rows (aproximadamente)
 INSERT INTO `usuarios` (`id`, `usuario`, `senha`, `email`, `apelido`, `nome_completo`, `status`, `created_at`, `updated_at`) VALUES
 	(1, 'admin', 'admin', 'admin@npo.com.br', 'Administrador', '', 1, NULL, NULL),
 	(2, 'alisson', '123', 'alissoncavalcanticma@gmail.com', 'Alisson', 'Alisson Cavalcanti', 0, NULL, NULL),
@@ -9854,63 +9854,55 @@ INSERT INTO `usuarios` (`id`, `usuario`, `senha`, `email`, `apelido`, `nome_comp
 	(100, 'teste', '123', 'alisson@email245.com', 'AlissonCG', 'Alisson', 1, '2025-05-05 03:30:13', '2025-05-05 03:30:13'),
 	(101, 'teste', '123', 'alisson@email6.com', 'AlissonCG', 'Alisson', 1, '2025-05-05 03:35:15', '2025-05-05 03:35:15'),
 	(102, 'teste', '123', 'alisson@email400.com', 'AlissonCG', 'Alisson', 1, '2025-05-05 03:38:52', '2025-05-05 03:38:52'),
-	(103, 'teste', '123', 'alisson@email602.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 19:07:32', '2025-05-24 19:07:32'),
-	(104, 'teste', '123', 'alisson@email384.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 20:05:54', '2025-05-24 20:05:54'),
-	(105, 'teste', '123', 'alisson@email226.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 20:07:11', '2025-05-24 20:07:11'),
-	(106, 'teste', '123', 'alisson@email700.com', 'AlissonCG', 'Alisson', 1, '2025-05-26 23:02:50', '2025-05-26 23:02:50'),
-	(107, 'teste', '123', 'alisson@email648.com', 'AlissonCG', 'Alisson', 1, '2025-05-26 23:03:38', '2025-05-26 23:03:38'),
-	(108, 'teste', '123', 'alisson@email376.com', 'AlissonCG', 'Alisson', 1, '2025-05-26 23:05:54', '2025-05-26 23:05:54'),
-	(109, 'teste', '123', 'alisson@email98.com', 'AlissonCG', 'Alisson', 1, '2025-05-27 01:22:49', '2025-05-27 01:22:49'),
-	(110, 'teste', '123', 'alisson@email958.com', 'AlissonCG', 'Alisson', 1, '2025-05-31 06:27:56', '2025-05-31 06:27:56'),
-	(111, 'teste', '123', 'alisson@email461.com', 'AlissonCG', 'Alisson', 1, '2025-06-01 06:47:04', '2025-06-01 06:47:04'),
-	(112, 'teste', '123', 'alisson@email522.com', 'AlissonCG', 'Alisson', 1, '2025-06-01 07:24:33', '2025-06-01 07:24:33'),
-	(113, 'teste', '123', 'alisson@email109.com', 'AlissonCG', 'Alisson', 1, '2025-06-01 08:44:43', '2025-06-01 08:44:43'),
-	(114, 'teste', '123', 'alisson@email688.com', 'AlissonCG', 'Alisson', 1, '2025-06-07 15:12:16', '2025-06-07 15:12:16'),
-	(115, 'teste', '123', 'alisson@email257.com', 'AlissonCG', 'Alisson', 1, '2025-06-07 20:31:57', '2025-06-07 20:31:57'),
-	(116, 'teste', '123', 'alisson@email332.com', 'AlissonCG', 'Alisson', 1, '2025-06-07 20:34:02', '2025-06-07 20:34:02'),
-	(117, 'teste', '123', 'alisson@email517.com', 'AlissonCG', 'Alisson', 1, '2025-06-07 20:42:45', '2025-06-07 20:42:45'),
-	(118, 'teste', '123', 'alisson@email991.com', 'AlissonCG', 'Alisson', 1, '2025-06-08 00:03:41', '2025-06-08 00:03:41'),
-	(119, 'teste', '123', 'alisson@email887.com', 'AlissonCG', 'Alisson', 1, '2025-06-08 04:13:59', '2025-06-08 04:13:59'),
-	(120, 'teste', '123', 'alisson@email309.com', 'AlissonCG', 'Alisson', 1, '2025-06-08 04:38:28', '2025-06-08 04:38:28'),
-	(121, 'teste', '123', 'alisson@email596.com', 'AlissonCG', 'Alisson', 1, '2025-06-08 04:41:00', '2025-06-08 04:41:00'),
-	(122, 'teste', '123', 'alisson@email650.com', 'AlissonCG', 'Alisson', 1, '2025-06-08 05:11:03', '2025-06-08 05:11:03'),
-	(123, 'teste', '123', 'alisson@email595.com', 'AlissonCG', 'Alisson', 1, '2025-06-08 05:13:42', '2025-06-08 05:13:42'),
-	(124, 'teste', '123', 'alisson@email573.com', 'AlissonCG', 'Alisson', 1, '2025-06-14 21:54:52', '2025-06-14 21:54:52'),
-	(125, 'teste', '123', 'alisson@email793.com', 'AlissonCG', 'Alisson', 1, '2025-06-14 22:51:53', '2025-06-14 22:51:53'),
-	(126, 'teste', '123', 'alisson@email304.com', 'AlissonCG', 'Alisson', 1, '2025-06-14 23:07:17', '2025-06-14 23:07:17'),
-	(127, 'teste', '123', 'alisson@email993.com', 'AlissonCG', 'Alisson', 1, '2025-06-14 23:15:00', '2025-06-14 23:15:00'),
-	(128, 'teste', '123', 'alisson@email848.com', 'AlissonCG', 'Alisson', 1, '2025-06-17 01:44:50', '2025-06-17 01:44:50'),
-	(129, 'teste', '123', 'alisson@email293.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 02:56:07', '2025-06-20 02:56:07'),
-	(130, 'teste', '123', 'alisson@email985.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 02:57:48', '2025-06-20 02:57:48'),
-	(131, 'teste', '123', 'alisson@email157.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 02:58:56', '2025-06-20 02:58:56'),
-	(132, 'teste', '123', 'alisson@email976.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 02:59:45', '2025-06-20 02:59:45'),
-	(133, 'teste', '123', 'alisson@email52.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 03:03:12', '2025-06-20 03:03:12'),
-	(134, 'teste', '123', 'alisson@email211.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 03:05:39', '2025-06-20 03:05:39'),
-	(135, 'teste', '123', 'alisson@email684.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 03:17:14', '2025-06-20 03:17:14'),
-	(136, 'teste', '123', 'alisson@email711.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 03:30:57', '2025-06-20 03:30:57'),
-	(137, 'teste', '123', 'alisson@email856.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 03:35:50', '2025-06-20 03:35:50'),
-	(138, 'teste', '123', 'alisson@email935.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 03:50:56', '2025-06-20 03:50:56'),
-	(139, 'teste', '123', 'alisson@email999.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 03:52:42', '2025-06-20 03:52:42'),
-	(140, 'teste', '123', 'alisson@email745.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 03:54:04', '2025-06-20 03:54:04'),
-	(141, 'teste', '123', 'alisson@email209.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 03:58:52', '2025-06-20 03:58:52'),
-	(142, 'teste', '123', 'alisson@email120.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 04:00:35', '2025-06-20 04:00:35'),
-	(143, 'teste', '123', 'alisson@email350.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 04:01:59', '2025-06-20 04:01:59'),
-	(144, 'teste', '123', 'alisson@email318.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 04:02:48', '2025-06-20 04:02:48'),
-	(145, 'teste', '123', 'alisson@email58.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 04:09:25', '2025-06-20 04:09:25'),
-	(146, 'teste', '123', 'alisson@email62.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 04:10:25', '2025-06-20 04:10:25'),
-	(147, 'teste', '123', 'alisson@email778.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 04:14:23', '2025-06-20 04:14:23'),
-	(148, 'teste', '123', 'alisson@email871.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 04:16:21', '2025-06-20 04:16:21'),
-	(149, 'teste', '123', 'alisson@email227.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 04:18:25', '2025-06-20 04:18:25'),
-	(150, 'teste', '123', 'alisson@email39.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 04:33:56', '2025-06-20 04:33:56'),
-	(151, 'teste', '123', 'alisson@email253.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 04:35:36', '2025-06-20 04:35:36'),
-	(152, 'teste', '123', 'alisson@email276.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 05:09:46', '2025-06-20 05:09:46'),
-	(153, 'teste', '123', 'alisson@email662.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 05:18:45', '2025-06-20 05:18:45'),
-	(154, 'teste', '123', 'alisson@email230.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 05:19:38', '2025-06-20 05:19:38'),
-	(155, 'teste', '123', 'alisson@email869.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 05:22:13', '2025-06-20 05:22:13'),
-	(156, 'teste', '123', 'alisson@email516.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 05:31:58', '2025-06-20 05:31:58'),
-	(157, 'teste', '123', 'alisson@email164.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 05:42:16', '2025-06-20 05:42:16'),
-	(158, 'teste', '123', 'alisson@email265.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 05:52:02', '2025-06-20 05:52:02'),
-	(159, 'teste', '123', 'alisson@email262.com', 'AlissonCG', 'Alisson', 1, '2025-06-20 05:56:12', '2025-06-20 05:56:12');
+	(103, 'teste', '123', 'alisson@email177.com', 'AlissonCG', 'Alisson', 1, '2025-05-11 03:54:36', '2025-05-11 03:54:36'),
+	(104, 'teste', '123', 'alisson@email83.com', 'AlissonCG', 'Alisson', 1, '2025-05-11 04:36:22', '2025-05-11 04:36:22'),
+	(105, 'teste', '123', 'alisson@email843.com', 'AlissonCG', 'Alisson', 1, '2025-05-11 04:39:53', '2025-05-11 04:39:53'),
+	(106, 'teste', '123', 'alisson@email75.com', 'AlissonCG', 'Alisson', 1, '2025-05-11 04:57:50', '2025-05-11 04:57:50'),
+	(107, 'teste', '123', 'alisson@email880.com', 'AlissonCG', 'Alisson', 1, '2025-05-11 05:03:39', '2025-05-11 05:03:39'),
+	(108, 'teste', '123', 'alisson@email408.com', 'AlissonCG', 'Alisson', 1, '2025-05-11 05:06:54', '2025-05-11 05:06:54'),
+	(109, 'teste', '123', 'alisson@email766.com', 'AlissonCG', 'Alisson', 1, '2025-05-11 05:44:58', '2025-05-11 05:44:58'),
+	(110, 'teste', '123', 'alisson@email168.com', 'AlissonCG', 'Alisson', 1, '2025-05-11 06:39:19', '2025-05-11 06:39:19'),
+	(111, 'teste', '123', 'alisson@email341.com', 'AlissonCG', 'Alisson', 1, '2025-05-11 07:01:06', '2025-05-11 07:01:06'),
+	(112, 'teste', '123', 'alisson@email125.com', 'AlissonCG', 'Alisson', 1, '2025-05-11 07:06:01', '2025-05-11 07:06:01'),
+	(113, 'teste', '123', 'alisson@email161.com', 'AlissonCG', 'Alisson', 1, '2025-05-11 07:08:32', '2025-05-11 07:08:32'),
+	(114, 'teste', '123', 'alisson@email614.com', 'AlissonCG', 'Alisson', 1, '2025-05-11 07:10:20', '2025-05-11 07:10:20'),
+	(115, 'teste', '123', 'alisson@email683.com', 'AlissonCG', 'Alisson', 1, '2025-05-11 07:15:36', '2025-05-11 07:15:36'),
+	(116, 'teste', '123', 'alisson@email814.com', 'AlissonCG', 'Alisson', 1, '2025-05-17 04:16:00', '2025-05-17 04:16:00'),
+	(117, 'teste', '123', 'alisson@email590.com', 'AlissonCG', 'Alisson', 1, '2025-05-17 04:48:37', '2025-05-17 04:48:37'),
+	(118, 'teste', '123', 'alisson@email691.com', 'AlissonCG', 'Alisson', 1, '2025-05-17 05:53:57', '2025-05-17 05:53:57'),
+	(119, 'teste', '123', 'alisson@email19.com', 'AlissonCG', 'Alisson', 1, '2025-05-17 06:12:40', '2025-05-17 06:12:40'),
+	(120, 'teste', '123', 'alisson@email609.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 07:07:46', '2025-05-24 07:07:46'),
+	(121, 'teste', '123', 'alisson@email952.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 07:32:20', '2025-05-24 07:32:20'),
+	(122, 'teste', '123', 'alisson@email363.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 07:42:12', '2025-05-24 07:42:12'),
+	(123, 'teste', '123', 'alisson@email448.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 07:46:59', '2025-05-24 07:46:59'),
+	(124, 'teste', '123', 'alisson@email238.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 07:53:35', '2025-05-24 07:53:35'),
+	(125, 'teste', '123', 'alisson@email56.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 08:02:10', '2025-05-24 08:02:10'),
+	(126, 'teste', '123', 'alisson@email489.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 08:07:43', '2025-05-24 08:07:43'),
+	(127, 'teste', '123', 'alisson@email622.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 08:12:56', '2025-05-24 08:12:56'),
+	(128, 'teste', '123', 'alisson@email441.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 08:15:27', '2025-05-24 08:15:27'),
+	(129, 'teste', '123', 'alisson@email884.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 08:31:23', '2025-05-24 08:31:23'),
+	(130, 'teste', '123', 'alisson@email215.com', 'AlissonCG', 'Alisson', 1, '2025-05-24 08:33:05', '2025-05-24 08:33:05'),
+	(131, 'teste', '123', 'alisson@email621.com', 'AlissonCG', 'Alisson', 1, '2025-05-25 04:49:33', '2025-05-25 04:49:33'),
+	(132, 'teste', '123', 'alisson@email256.com', 'AlissonCG', 'Alisson', 1, '2025-05-25 06:45:34', '2025-05-25 06:45:34'),
+	(133, 'teste', '123', 'alisson@email352.com', 'AlissonCG', 'Alisson', 1, '2025-05-25 07:26:28', '2025-05-25 07:26:28'),
+	(134, 'teste', '123', 'alisson@email794.com', 'AlissonCG', 'Alisson', 1, '2025-06-25 02:02:50', '2025-06-25 02:02:50'),
+	(135, 'teste', '123', 'alisson@email518.com', 'AlissonCG', 'Alisson', 1, '2025-06-25 16:01:12', '2025-06-25 16:01:12'),
+	(136, 'teste', '123', 'alisson@email893.com', 'AlissonCG', 'Alisson', 1, '2025-08-02 04:12:37', '2025-08-02 04:12:37'),
+	(137, 'teste', '123', 'alisson@email897.com', 'AlissonCG', 'Alisson', 1, '2025-08-02 04:31:53', '2025-08-02 04:31:53'),
+	(138, 'teste', '123', 'alisson@email981.com', 'AlissonCG', 'Alisson', 1, '2025-08-02 05:12:23', '2025-08-02 05:12:23'),
+	(139, 'teste', '123', 'alisson@email298.com', 'AlissonCG', 'Alisson', 1, '2025-08-02 05:19:08', '2025-08-02 05:19:08'),
+	(140, 'teste', '123', 'alisson@email894.com', 'AlissonCG', 'Alisson', 1, '2025-08-02 05:21:05', '2025-08-02 05:21:05'),
+	(141, 'teste', '123', 'alisson@email765.com', 'AlissonCG', 'Alisson', 1, '2025-08-02 05:31:20', '2025-08-02 05:31:20'),
+	(142, 'teste', '123', 'alisson@email838.com', 'AlissonCG', 'Alisson', 1, '2025-08-02 05:44:16', '2025-08-02 05:44:16'),
+	(143, 'teste', '123', 'alisson@email144.com', 'AlissonCG', 'Alisson', 1, '2025-08-02 05:45:16', '2025-08-02 05:45:16'),
+	(144, 'teste', '123', 'alisson@email151.com', 'AlissonCG', 'Alisson', 1, '2025-08-02 05:45:52', '2025-08-02 05:45:52'),
+	(145, 'teste', '123', 'alisson@email483.com', 'AlissonCG', 'Alisson', 1, '2025-08-02 06:15:07', '2025-08-02 06:15:07'),
+	(146, 'teste', '123', 'alisson@email536.com', 'AlissonCG', 'Alisson', 1, '2025-08-02 06:25:05', '2025-08-02 06:25:05'),
+	(147, 'teste', '123', 'alisson@email740.com', 'AlissonCG', 'Alisson', 1, '2025-08-02 06:38:19', '2025-08-02 06:38:19'),
+	(148, 'teste', '123', 'alisson@email667.com', 'AlissonCG', 'Alisson', 1, '2025-08-02 06:49:43', '2025-08-02 06:49:43'),
+	(149, 'teste', '123', 'alisson@email313.com', 'AlissonCG', 'Alisson', 1, '2025-08-02 06:51:14', '2025-08-02 06:51:14'),
+	(150, 'teste', '123', 'alisson@email265.com', 'AlissonCG', 'Alisson', 1, '2025-08-02 07:13:24', '2025-08-02 07:13:24'),
+	(151, 'teste', '123', 'alisson@email975.com', 'AlissonCG', 'Alisson', 1, '2025-08-05 01:18:19', '2025-08-05 01:18:19');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
