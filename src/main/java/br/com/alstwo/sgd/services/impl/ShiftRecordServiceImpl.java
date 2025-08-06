@@ -7,7 +7,7 @@ import br.com.alstwo.sgd.services.exceptions.ObjectNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -22,13 +22,14 @@ public class ShiftRecordServiceImpl implements ShiftRecordService {
     }
 
     @Override
-    public List<ShiftRecord> findByAllFilters(Long id, Long userId, Long shiftId, LocalDateTime opening, LocalDateTime closing, Integer status) {
-        return List.of();
+    public List<ShiftRecord> findByAllFilters(Long id, Long userId, Long shiftId, LocalDate startDate, LocalDate endDate, Integer status) {
+        return shiftRecordRepository.findByAllFilters(id, userId, shiftId, startDate, endDate, status);
     }
 
     @Override
     public ShiftRecord create(ShiftRecord shiftRecord) {
-        return null;
+        List<ShiftRecord> shiftRecordList = shiftRecordRepository.findByAllFilters();
+        return shiftRecordRepository.save(shiftRecord);
     }
 
     @Override
