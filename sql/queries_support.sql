@@ -77,3 +77,18 @@ CREATE TABLE turnos_registro (
     REFERENCES turnos (id)
     ON UPDATE CASCADE ON DELETE RESTRICT
 ) ENGINE=InnoDB CHARSET=utf8mb4;
+*/
+SELECT * FROM usuarios
+SELECT 
+		t.
+FROM 
+	turnos_registro tr
+JOIN 
+	turnos t
+	ON tr.turno_id = t.id
+JOIN
+	usuarios u
+	ON tr.usuario_id = u.id 
+WHERE
+	tr.`status` = 1
+	 
