@@ -9,7 +9,7 @@ import java.util.List;
 public interface ShiftRecordService {
 
     ShiftRecord findById(Long id);
-    List<ShiftRecord> findByAllFilters (Long id, Long userId, Long shiftId, LocalDate startDate, LocalDate endDate, Integer status);
+    List<ShiftRecord> findByAllFilters (Long id, Long userId, Long shiftId, LocalDate startDate, LocalDate endDate, Integer status, Integer code);
     ShiftRecord create(ShiftRecord shiftRecord);
     ShiftRecord update(ShiftRecord shiftRecord);
     void delete(Long id);
