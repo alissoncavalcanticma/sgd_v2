@@ -13,6 +13,12 @@ public interface ShiftRecordRepository extends JpaRepository<ShiftRecord, Long>{
     @Query(nativeQuery = true, value = """
             SELECT *
             FROM turnos_registro tr
+            JOIN
+            	turnos t
+            	ON tr.turno_id = t.id
+            JOIN
+            	usuarios u
+            	ON tr.usuario_id = u.id
             WHERE (:id IS NULL OR tr.id = :id)
             AND (:userId IS NULL OR tr.usuario_id = :userId)
             AND (:shiftId IS NULL OR tr.turno_id = :shiftId)
@@ -21,6 +27,7 @@ public interface ShiftRecordRepository extends JpaRepository<ShiftRecord, Long>{
                     AND (:endDate IS NULL OR tr.data <= :endDate)
                 )
             AND (:status IS NULL OR tr.status = :status)
+            AND (:code IS NULL OR t.codigo = :code)
             """)
     List<ShiftRecord> findByAllFilters(
             @Param("id") Long id,
@@ -28,5 +35,6 @@ public interface ShiftRecordRepository extends JpaRepository<ShiftRecord, Long>{
             @Param("shiftId") Long shiftId,
             @Param("startDate") LocalDate startDate,
             @Param("endDate") LocalDate endDate,
-            @Param("status") Integer status);
+            @Param("status") Integer status,
+            @Param("code") Integer code);
 }
