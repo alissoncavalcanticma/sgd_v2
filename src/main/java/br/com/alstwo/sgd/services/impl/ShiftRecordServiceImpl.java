@@ -22,13 +22,16 @@ public class ShiftRecordServiceImpl implements ShiftRecordService {
     }
 
     @Override
-    public List<ShiftRecord> findByAllFilters(Long id, Long userId, Long shiftId, LocalDate startDate, LocalDate endDate, Integer status) {
-        return shiftRecordRepository.findByAllFilters(id, userId, shiftId, startDate, endDate, status);
+    public List<ShiftRecord> findByAllFilters(Long id, Long userId, Long shiftId, LocalDate startDate, LocalDate endDate, Integer status, Integer code) {
+        return shiftRecordRepository.findByAllFilters(id, userId, shiftId, startDate, endDate, status, code);
     }
 
     @Override
-    public ShiftRecord create(ShiftRecord shiftRecord) {
-        List<ShiftRecord> shiftRecordList = shiftRecordRepository.findByAllFilters();
+    public ShiftRecord create(ShiftRecord shiftRecord, Integer shiftCode) {
+        List<ShiftRecord> shiftRecordList = shiftRecordRepository.findByAllFilters(null, null, null, shiftRecord.getDate(), shiftRecord.getDate(), null, shiftCode);
+        if(!shiftRecordList.isEmpty()){
+            return null;
+        }
         return shiftRecordRepository.save(shiftRecord);
     }
 

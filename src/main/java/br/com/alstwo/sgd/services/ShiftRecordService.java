@@ -10,7 +10,7 @@ public interface ShiftRecordService {
 
     ShiftRecord findById(Long id);
     List<ShiftRecord> findByAllFilters (Long id, Long userId, Long shiftId, LocalDate startDate, LocalDate endDate, Integer status, Integer code);
-    ShiftRecord create(ShiftRecord shiftRecord);
+    ShiftRecord create(ShiftRecord shiftRecord, Integer code);
     ShiftRecord update(ShiftRecord shiftRecord);
     void delete(Long id);
 }
