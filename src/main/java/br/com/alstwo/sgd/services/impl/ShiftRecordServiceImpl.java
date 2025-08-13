@@ -43,6 +43,7 @@ public class ShiftRecordServiceImpl implements ShiftRecordService {
 
     @Override
     public void delete(Long id) {
-
+        shiftRecordRepository.findById(id).orElseThrow(()-> new ObjectNotFoundException("Turno não encontrado."));
+        shiftRecordRepository.deleteById(id);
     }
 }
