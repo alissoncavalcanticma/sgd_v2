@@ -3,7 +3,6 @@ package br.com.alstwo.sgd.services;
 import br.com.alstwo.sgd.domain.ShiftRecord;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 public interface ShiftRecordService {
