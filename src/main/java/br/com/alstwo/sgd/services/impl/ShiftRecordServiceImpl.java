@@ -37,7 +37,8 @@ public class ShiftRecordServiceImpl implements ShiftRecordService {
 
     @Override
     public ShiftRecord update(ShiftRecord shiftRecord) {
-        return null;
+        ShiftRecord shiftRec = shiftRecordRepository.findById(shiftRecord.getId()).orElseThrow(() -> new ObjectNotFoundException("Registro de turno não encontrado."));
+        return shiftRecordRepository.save(shiftRecord);
     }
 
     @Override
