@@ -6,7 +6,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -23,12 +23,47 @@ public interface ShiftRecordResource {
     /* Anotações do Swagger */
     ResponseEntity<ShiftRecordDTO> findById(Long id);
 
-    ResponseEntity<List<ShiftRecordDTO>> findByAllFilters (Long id, Long userId, Long shiftId, LocalDate startDate, LocalDate endDate, Integer status, Integer code);
 
-    ResponseEntity<ShiftRecordDTO> create(ShiftRecord shiftRecord, Integer code);
+    @GetMapping
+    /*Anotações do Swagger*/
+    @Operation(summary = "Consulta de registro de turno", description = "Consulta de registro de turnos com vários filtros", tags = "ShiftRecord")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Consulta realizada com sucesso."),
+            @ApiResponse(responseCode = "400", description = "Tentativa de consulta com erro.")
+    })
+    /*Anotações do Swagger*/
+    ResponseEntity<List<ShiftRecordDTO>> findByAllFilters (@RequestParam(required = false) Long id, @RequestParam(required = false) Long userId, @RequestParam(required = false) Long shiftId, @RequestParam(required = false) LocalDate startDate, @RequestParam(required = false) LocalDate endDate, @RequestParam(required = false) Integer status, @RequestParam(required = false) Integer code);
 
-    ResponseEntity<ShiftRecordDTO> update(Long id, ShiftRecord shiftRecord);
 
-    ResponseEntity<Object> delete(Long id);
+
+    @PostMapping
+    @Operation(summary = "Criação de registro de turno", description = "Criação de registro de turno.", tags = "ShiftRecord")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Criação realizada com sucesso"),
+            @ApiResponse(responseCode = "400", description = "Tentativa de criação apresentou erro.")
+    })
+    ResponseEntity<ShiftRecordDTO> create(@RequestBody ShiftRecord shiftRecord, @RequestBody(required = false) Integer code);
+    /*Anotações do Swagger*/
+
+
+    @PutMapping(value = "/{id}")
+    /*Anotações do Swagger*/
+    @Operation(summary = "Alteração de registro de turno.", description = "Alteração de registro de turno.", tags = "ShiftRecord")
+    @ApiResponses(value={
+            @ApiResponse(responseCode = "200", description = "Alteração realizada com sucesso."),
+            @ApiResponse(responseCode = "400", description = "Tentativa de alteração apresentou erro.")
+    })
+    /*Anotações do Swagger*/
+    ResponseEntity<ShiftRecordDTO> update(@PathVariable Long id, @RequestBody ShiftRecord shiftRecord);
+
+    @DeleteMapping(value = "/{id}")
+    /*Anotações do Swagger*/
+    @Operation(summary = "Deleção de registro de turno", description = "Deleção de registro de turno", tags = "ShiftRecord")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Deleção realizada com sucesso."),
+            @ApiResponse(responseCode = "400", description = "Tentativa de deleção com erro.")
+    })
+    /*Anotações do Swagger*/
+    ResponseEntity<Object> delete(@PathVariable Long id);
 
 }
